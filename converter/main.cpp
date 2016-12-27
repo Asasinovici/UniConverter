@@ -1,0 +1,10 @@
+#include "converter.h"
+#include <QtWidgets/QApplication>
+
+int main(int argc, char *argv[])
+{
+	QApplication a(argc, argv);
+	converter w;
+	w.show();
+	return a.exec();
+}
