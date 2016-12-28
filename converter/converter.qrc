@@ -1,5 +1,7 @@
 <RCC>
-  <qresource prefix="converter">
-    <file>Resources/Untitled-1.png</file>
-  </qresource>
+    <qresource prefix="/converter">
+        <file>Resources/Conversion Table.txt</file>
+        <file>Resources/swapValues.png</file>
+        <file>Resources/swapValues-pressed.png</file>
+    </qresource>
 </RCC>

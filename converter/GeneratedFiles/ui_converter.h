@@ -32,12 +32,13 @@ public:
     QAction *actionInformatii;
     QAction *actionAdauga_unitate_de_masura;
     QWidget *centralWidget;
-    QComboBox *comboBox;
-    QComboBox *comboBox_2;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QComboBox *comboBox_3;
-    QPushButton *pushButton;
+    QComboBox *unitSelector_1;
+    QComboBox *unitSelector_2;
+    QLineEdit *inputBeforeConversion;
+    QLineEdit *inputAfterConversion;
+    QComboBox *categorySelector;
+    QPushButton *swapValues;
+    QPushButton *swapUnits;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuAjutor;
@@ -54,6 +55,7 @@ public:
         converterClass->setSizePolicy(sizePolicy);
         converterClass->setMinimumSize(QSize(600, 170));
         converterClass->setMaximumSize(QSize(600, 170));
+        converterClass->setStyleSheet(QStringLiteral(""));
         actionSoidfhgbuiaebgae = new QAction(converterClass);
         actionSoidfhgbuiaebgae->setObjectName(QStringLiteral("actionSoidfhgbuiaebgae"));
         actionExit = new QAction(converterClass);
@@ -64,118 +66,20 @@ public:
         actionAdauga_unitate_de_masura->setObjectName(QStringLiteral("actionAdauga_unitate_de_masura"));
         centralWidget = new QWidget(converterClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        comboBox = new QComboBox(centralWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setEnabled(true);
-        comboBox->setGeometry(QRect(500, 10, 61, 30));
+        unitSelector_1 = new QComboBox(centralWidget);
+        unitSelector_1->setObjectName(QStringLiteral("unitSelector_1"));
+        unitSelector_1->setEnabled(true);
+        unitSelector_1->setGeometry(QRect(509, 10, 61, 30));
         QFont font;
-        comboBox->setFont(font);
-        comboBox->setMouseTracking(false);
-        comboBox->setToolTipDuration(1);
-        comboBox->setAutoFillBackground(false);
-        comboBox->setStyleSheet(QLatin1String("QComboBox {\n"
+        font.setFamily(QStringLiteral("Aero Matics"));
+        unitSelector_1->setFont(font);
+        unitSelector_1->setMouseTracking(false);
+        unitSelector_1->setToolTipDuration(1);
+        unitSelector_1->setAutoFillBackground(false);
+        unitSelector_1->setStyleSheet(QLatin1String("QComboBox {\n"
 "    border: 1px solid gray;\n"
-"    padding: 1px 5px 1px 5px;\n"
-"	font-size: 17px;\n"
-"	selection-color: #000000;\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background: white;\n"
-"}\n"
-"\n"
-"QComboBox:!editable, QComboBox::drop-down:editable {\n"
-"     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
-"}\n"
-"\n"
-"/* QComboBox gets the \"on\" state when the popup is open */\n"
-"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
-"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
-"	border: 1px solid gray;\n"
-"}\n"
-"\n"
-"\n"
-"QComboBox::drop-down {\n"
-"	border: 0px solid white;\n"
-"	background-color: rgba(255, 255, 255, 0%);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    border: 1px solid gray;\n"
-"	border-top-color: white;\n"
-"    selection-background-color: #EEEEEE;\n"
-"	position: 0px -1px;\n"
-"    padding: 1px "
-                        "5px 5px 5px;\n"
-"	selection-color: #000000;\n"
-"}\n"
-""));
-        comboBox_2 = new QComboBox(centralWidget);
-        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
-        comboBox_2->setEnabled(true);
-        comboBox_2->setGeometry(QRect(500, 90, 61, 30));
-        comboBox_2->setFont(font);
-        comboBox_2->setMouseTracking(false);
-        comboBox_2->setToolTipDuration(1);
-        comboBox_2->setAutoFillBackground(false);
-        comboBox_2->setStyleSheet(QLatin1String("QComboBox {\n"
-"    border: 1px solid gray;\n"
-"    padding: 1px 5px 1px 5px;\n"
-"	font-size: 17px;\n"
-"	selection-color: #000000;\n"
-"}\n"
-"\n"
-"QComboBox:editable {\n"
-"    background: white;\n"
-"}\n"
-"\n"
-"QComboBox:!editable, QComboBox::drop-down:editable {\n"
-"     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
-"}\n"
-"\n"
-"/* QComboBox gets the \"on\" state when the popup is open */\n"
-"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
-"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
-"	border: 1px solid gray;\n"
-"}\n"
-"\n"
-"\n"
-"QComboBox::drop-down {\n"
-"	border: 0px solid white;\n"
-"	background-color: rgba(255, 255, 255, 0%);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    border: 1px solid gray;\n"
-"	border-top-color: white;\n"
-"    selection-background-color: #EEEEEE;\n"
-"	position: 0px -1px;\n"
-"    padding: 1px "
-                        "5px 5px 5px;\n"
-"	selection-color: #000000;\n"
-"}\n"
-""));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(200, 10, 300, 30));
-        lineEdit_2 = new QLineEdit(centralWidget);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(200, 90, 300, 30));
-        comboBox_3 = new QComboBox(centralWidget);
-        comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
-        comboBox_3->setEnabled(true);
-        comboBox_3->setGeometry(QRect(10, 30, 161, 61));
-        comboBox_3->setFont(font);
-        comboBox_3->setMouseTracking(false);
-        comboBox_3->setToolTipDuration(1);
-        comboBox_3->setAutoFillBackground(false);
-        comboBox_3->setStyleSheet(QLatin1String("QComboBox {\n"
-"    border: 1px solid gray;\n"
-"    padding: 5px 5px 5px 10px;\n"
+"    padding: 0px 5px 0px 5px;\n"
+"	font-family: \"Aero Matics\";\n"
 "	font-size: 25px;\n"
 "	selection-color: #000000;\n"
 "}\n"
@@ -205,16 +109,147 @@ public:
 "QComboBox QAbstractItemView {\n"
 "    border: 1px solid gray;\n"
 "	border-top-color: white;\n"
-"    selection-background-color: #EEEEEE;\n"
-"    padding: 5px 5px 5px 10px;\n"
-"	selec"
-                        "tion-color: #000000;\n"
+"    selection-background-color: rgb(220, 220, 220);\n"
+""
+                        "	selection-color: rgb(0, 0, 0);\n"
+"    padding: 0px 3px 3px 3px;\n"
 "}\n"
 ""));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(200, 50, 40, 30));
-        pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
+        unitSelector_2 = new QComboBox(centralWidget);
+        unitSelector_2->setObjectName(QStringLiteral("unitSelector_2"));
+        unitSelector_2->setEnabled(true);
+        unitSelector_2->setGeometry(QRect(509, 90, 61, 30));
+        unitSelector_2->setFont(font);
+        unitSelector_2->setMouseTracking(false);
+        unitSelector_2->setToolTipDuration(1);
+        unitSelector_2->setAutoFillBackground(false);
+        unitSelector_2->setStyleSheet(QLatin1String("QComboBox {\n"
+"    border: 1px solid gray;\n"
+"    padding: 0px 5px 0px 5px;\n"
+"	font-family: \"Aero Matics\";\n"
+"	font-size: 25px;\n"
+"	selection-color: #000000;\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: white;\n"
+"}\n"
+"\n"
+"QComboBox:!editable, QComboBox::drop-down:editable {\n"
+"     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
+"}\n"
+"\n"
+"/* QComboBox gets the \"on\" state when the popup is open */\n"
+"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
+"	border: 1px solid gray;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	border: 0px solid white;\n"
+"	background-color: rgba(255, 255, 255, 0%);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 1px solid gray;\n"
+"	border-top-color: white;\n"
+"    selection-background-color: rgb(220, 220, 220);\n"
+""
+                        "	selection-color: rgb(0, 0, 0);\n"
+"    padding: 0px 3px 3px 3px;\n"
+"}\n"
+""));
+        inputBeforeConversion = new QLineEdit(centralWidget);
+        inputBeforeConversion->setObjectName(QStringLiteral("inputBeforeConversion"));
+        inputBeforeConversion->setGeometry(QRect(210, 10, 300, 30));
+        QPalette palette;
+        inputBeforeConversion->setPalette(palette);
+        inputBeforeConversion->setStyleSheet(QStringLiteral("font: 17pt \"Aero Matics\";"));
+        inputBeforeConversion->setClearButtonEnabled(true);
+        inputAfterConversion = new QLineEdit(centralWidget);
+        inputAfterConversion->setObjectName(QStringLiteral("inputAfterConversion"));
+        inputAfterConversion->setEnabled(true);
+        inputAfterConversion->setGeometry(QRect(210, 90, 300, 30));
+        inputAfterConversion->setStyleSheet(QLatin1String("font: 17pt \"Aero Matics\";\n"
+"\n"
+""));
+        inputAfterConversion->setReadOnly(true);
+        inputAfterConversion->setClearButtonEnabled(false);
+        categorySelector = new QComboBox(centralWidget);
+        categorySelector->setObjectName(QStringLiteral("categorySelector"));
+        categorySelector->setEnabled(true);
+        categorySelector->setGeometry(QRect(20, 30, 161, 61));
+        categorySelector->setFont(font);
+        categorySelector->setMouseTracking(false);
+        categorySelector->setToolTipDuration(1);
+        categorySelector->setAutoFillBackground(false);
+        categorySelector->setStyleSheet(QLatin1String("QComboBox {\n"
+"    border: 1px solid gray;\n"
+"    padding: 5px 5px 5px 15px;\n"
+"	font-family: \"Aero Matics\";\n"
+"	font-size: 31px;\n"
+"	selection-color: #000000;\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: white;\n"
+"}\n"
+"\n"
+"QComboBox:!editable, QComboBox::drop-down:editable {\n"
+"     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
+"}\n"
+"\n"
+"/* QComboBox gets the \"on\" state when the popup is open */\n"
+"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
+"	border: 1px solid gray;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	border: 0px solid white;\n"
+"	background-color: rgba(255, 255, 255, 0%);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 1px solid gray;\n"
+"	border-top-color: white;\n"
+"    selection-background-color: rgb(220, 220, 220);"
+                        "\n"
+"    padding: 0px 10px 5px 10px;\n"
+"	selection-color: rgb(0, 0, 0);\n"
+"}\n"
+""));
+        swapValues = new QPushButton(centralWidget);
+        swapValues->setObjectName(QStringLiteral("swapValues"));
+        swapValues->setGeometry(QRect(210, 50, 40, 30));
+        swapValues->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 1px solid gray;\n"
+"    padding: 1px 5px 1px 5px;\n"
+"	font-size: 17px;\n"
+"	selection-color: #000000;\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
+"	background-image: url(:/converter/Resources/swapValues.png);\n"
+"}\n"
+"QPushButton::pressed {\n"
+"    border: 1px solid gray;\n"
+"    padding: 1px 5px 1px 5px;\n"
+"	font-size: 17px;\n"
+"	selection-color: #000000;\n"
+"	  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
+"	background-image: url(:/converter/Resources/swapValues-pressed.png);\n"
+"}"));
+        swapUnits = new QPushButton(centralWidget);
+        swapUnits->setObjectName(QStringLiteral("swapUnits"));
+        swapUnits->setGeometry(QRect(520, 50, 40, 30));
+        swapUnits->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
 "	font-size: 17px;\n"
@@ -247,6 +282,7 @@ public:
         menuAjutor->addAction(actionInformatii);
 
         retranslateUi(converterClass);
+        QObject::connect(actionExit, SIGNAL(triggered()), converterClass, SLOT(close()));
 
         QMetaObject::connectSlotsByName(converterClass);
     } // setupUi
@@ -258,8 +294,8 @@ public:
         actionExit->setText(QApplication::translate("converterClass", "Inchide", Q_NULLPTR));
         actionInformatii->setText(QApplication::translate("converterClass", "Informatii", Q_NULLPTR));
         actionAdauga_unitate_de_masura->setText(QApplication::translate("converterClass", "Adauga unitate de masura", Q_NULLPTR));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
+        unitSelector_1->clear();
+        unitSelector_1->insertItems(0, QStringList()
          << QApplication::translate("converterClass", "cm", Q_NULLPTR)
          << QApplication::translate("converterClass", "m", Q_NULLPTR)
          << QApplication::translate("converterClass", "nm", Q_NULLPTR)
@@ -267,8 +303,8 @@ public:
          << QApplication::translate("converterClass", "hm", Q_NULLPTR)
          << QApplication::translate("converterClass", "dm", Q_NULLPTR)
         );
-        comboBox_2->clear();
-        comboBox_2->insertItems(0, QStringList()
+        unitSelector_2->clear();
+        unitSelector_2->insertItems(0, QStringList()
          << QApplication::translate("converterClass", "cm", Q_NULLPTR)
          << QApplication::translate("converterClass", "m", Q_NULLPTR)
          << QApplication::translate("converterClass", "nm", Q_NULLPTR)
@@ -276,13 +312,15 @@ public:
          << QApplication::translate("converterClass", "hm", Q_NULLPTR)
          << QApplication::translate("converterClass", "dm", Q_NULLPTR)
         );
-        comboBox_3->clear();
-        comboBox_3->insertItems(0, QStringList()
+        inputBeforeConversion->setText(QString());
+        categorySelector->clear();
+        categorySelector->insertItems(0, QStringList()
          << QApplication::translate("converterClass", "Lungime", Q_NULLPTR)
          << QApplication::translate("converterClass", "Volum", Q_NULLPTR)
          << QApplication::translate("converterClass", "ETC", Q_NULLPTR)
         );
-        pushButton->setText(QString());
+        swapValues->setText(QString());
+        swapUnits->setText(QString());
         menuFile->setTitle(QApplication::translate("converterClass", "File", Q_NULLPTR));
         menuAjutor->setTitle(QApplication::translate("converterClass", "Ajutor", Q_NULLPTR));
     } // retranslateUi
