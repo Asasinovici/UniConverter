@@ -3,5 +3,7 @@
         <file>Resources/Conversion Table.txt</file>
         <file>Resources/swapValues.png</file>
         <file>Resources/swapValues-pressed.png</file>
+        <file>Resources/swapUnits.png</file>
+        <file>Resources/swapUnits-pressed.png</file>
     </qresource>
 </RCC>

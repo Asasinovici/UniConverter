@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_converter_t {
-    QByteArrayData data[7];
-    char stringdata0[146];
+    QByteArrayData data[6];
+    char stringdata0[129];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,16 +32,15 @@ static const qt_meta_stringdata_converter_t qt_meta_stringdata_converter = {
 QT_MOC_LITERAL(0, 0, 9), // "converter"
 QT_MOC_LITERAL(1, 10, 21), // "on_swapValues_pressed"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 38), // "on_categorySelector_currentTe..."
-QT_MOC_LITERAL(4, 72, 15), // "newCategoryName"
-QT_MOC_LITERAL(5, 88, 35), // "on_inputBeforeConversion_text..."
-QT_MOC_LITERAL(6, 124, 21) // "valueBeforeConversion"
+QT_MOC_LITERAL(3, 33, 20), // "on_swapUnits_pressed"
+QT_MOC_LITERAL(4, 54, 38), // "on_categorySelector_currentTe..."
+QT_MOC_LITERAL(5, 93, 35) // "on_inputBeforeConversion_text..."
 
     },
     "converter\0on_swapValues_pressed\0\0"
+    "on_swapUnits_pressed\0"
     "on_categorySelector_currentTextChanged\0"
-    "newCategoryName\0on_inputBeforeConversion_textEdited\0"
-    "valueBeforeConversion"
+    "on_inputBeforeConversion_textEdited"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,7 +50,7 @@ static const uint qt_meta_data_converter[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,14 +58,16 @@ static const uint qt_meta_data_converter[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x08 /* Private */,
-       3,    1,   30,    2, 0x08 /* Private */,
-       5,    1,   33,    2, 0x08 /* Private */,
+       1,    0,   34,    2, 0x08 /* Private */,
+       3,    0,   35,    2, 0x08 /* Private */,
+       4,    0,   36,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    4,
-    QMetaType::Void, QMetaType::QString,    6,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -78,11 +79,13 @@ void converter::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_swapValues_pressed(); break;
-        case 1: _t->on_categorySelector_currentTextChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->on_inputBeforeConversion_textEdited((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 1: _t->on_swapUnits_pressed(); break;
+        case 2: _t->on_categorySelector_currentTextChanged(); break;
+        case 3: _t->on_inputBeforeConversion_textEdited(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject converter::staticMetaObject = {
@@ -110,13 +113,13 @@ int converter::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

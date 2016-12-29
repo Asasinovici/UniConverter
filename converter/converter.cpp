@@ -78,27 +78,35 @@ void converter::initWidgets(rootNode *root)
 {
 	int categoryIndex = 0, unitIndex=0;
 	while (categoryIndex < root->numberOfCategories)
-		ui.categorySelector->addItem(root->categories[categoryIndex++]->categoryName);
+		ui.categorySelector->insertItem(categoryIndex, root->categories[categoryIndex++]->categoryName);
 	categoryNode *tempCategory = root->categories[0];
 	while (unitIndex < tempCategory->numberOfUnits)
 	{
-		ui.unitSelector_1->addItem(tempCategory->units[unitIndex]->unitNameShort);
-		ui.unitSelector_2->addItem(tempCategory->units[unitIndex++]->unitNameShort);
+		ui.unitSelector_1->insertItem(unitIndex, tempCategory->units[unitIndex]->unitNameShort);
+		ui.unitSelector_2->insertItem(unitIndex, tempCategory->units[unitIndex++]->unitNameShort);
 	}
 }
 
-void converter::on_categorySelector_currentTextChanged(QString newCategoryName)
+void converter::on_categorySelector_currentTextChanged()
 {	// things to do when the user changes category
+	int categoryIndex = 0, unitIndex = 0;
+	ui.inputBeforeConversion->clear();
+	ui.inputAfterConversion->clear();
 
-	// clear input 1
-	// clear input 2
-	// update combobox 1 with new units
-	// update combobox 2 with new units
-	QString s("abc");
-	ui.inputAfterConversion->setText(s);
+	QString newCategoryName = ui.categorySelector->currentText();
+
+	categoryNode *tempCategory = root->categories[ui.categorySelector->currentIndex()];
+	ui.unitSelector_1->clear();
+	ui.unitSelector_2->clear();
+	while (unitIndex < tempCategory->numberOfUnits)
+	{
+		ui.unitSelector_1->insertItem(unitIndex, tempCategory->units[unitIndex]->unitNameShort);
+		ui.unitSelector_2->insertItem(unitIndex, tempCategory->units[unitIndex++]->unitNameShort);
+	}
+
 }
 
-void converter::on_inputBeforeConversion_textEdited(QString valueBeforeConversion)
+void converter::on_inputBeforeConversion_textEdited()
 {	//things to do when user inputs values in the first lineedit
 	//ui.inputAfterConversion->setText(valueBeforeConversion);
 }
@@ -109,6 +117,16 @@ void converter::on_swapValues_pressed()
 	tempString = ui.inputBeforeConversion->text();
 	ui.inputBeforeConversion->setText(ui.inputAfterConversion->text());
 	ui.inputAfterConversion->setText(tempString);
+}
+
+void converter::on_swapUnits_pressed()
+{
+	if (ui.unitSelector_1->currentIndex() == ui.unitSelector_2->currentIndex())
+		return;
+	short int tempIndex;
+	tempIndex = ui.unitSelector_1->currentIndex();
+	ui.unitSelector_1->setCurrentIndex(ui.unitSelector_2->currentIndex());
+	ui.unitSelector_2->setCurrentIndex(tempIndex);
 }
 
 

@@ -227,7 +227,7 @@ public:
 ""));
         swapValues = new QPushButton(centralWidget);
         swapValues->setObjectName(QStringLiteral("swapValues"));
-        swapValues->setGeometry(QRect(210, 50, 40, 30));
+        swapValues->setGeometry(QRect(210, 50, 43, 30));
         swapValues->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
@@ -254,16 +254,18 @@ public:
 "    padding: 1px 5px 1px 5px;\n"
 "	font-size: 17px;\n"
 "	selection-color: #000000;\n"
-"	  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
+"	background-image: url(:/converter/Resources/swapUnits.png);\n"
 "}\n"
 "QPushButton::pressed {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
 "	font-size: 17px;\n"
 "	selection-color: #000000;\n"
-"	  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
+"	background-image: url(:/converter/Resources/swapUnits-pressed.png);\n"
 "}"));
         converterClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(converterClass);
