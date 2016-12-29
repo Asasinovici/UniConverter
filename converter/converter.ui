@@ -102,36 +102,6 @@ QComboBox QAbstractItemView {
 }
 </string>
     </property>
-    <item>
-     <property name="text">
-      <string>cm</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>m</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>nm</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>km</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>hm</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>dm</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="unitSelector_2">
     <property name="enabled">
@@ -200,36 +170,6 @@ QComboBox QAbstractItemView {
 }
 </string>
     </property>
-    <item>
-     <property name="text">
-      <string>cm</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>m</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>nm</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>km</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>hm</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>dm</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLineEdit" name="inputBeforeConversion">
     <property name="geometry">
@@ -348,21 +288,6 @@ QComboBox QAbstractItemView {
 }
 </string>
     </property>
-    <item>
-     <property name="text">
-      <string>Lungime</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Volum</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>ETC</string>
-     </property>
-    </item>
    </widget>
    <widget class="QPushButton" name="swapValues">
     <property name="geometry">

@@ -294,31 +294,7 @@ public:
         actionExit->setText(QApplication::translate("converterClass", "Inchide", Q_NULLPTR));
         actionInformatii->setText(QApplication::translate("converterClass", "Informatii", Q_NULLPTR));
         actionAdauga_unitate_de_masura->setText(QApplication::translate("converterClass", "Adauga unitate de masura", Q_NULLPTR));
-        unitSelector_1->clear();
-        unitSelector_1->insertItems(0, QStringList()
-         << QApplication::translate("converterClass", "cm", Q_NULLPTR)
-         << QApplication::translate("converterClass", "m", Q_NULLPTR)
-         << QApplication::translate("converterClass", "nm", Q_NULLPTR)
-         << QApplication::translate("converterClass", "km", Q_NULLPTR)
-         << QApplication::translate("converterClass", "hm", Q_NULLPTR)
-         << QApplication::translate("converterClass", "dm", Q_NULLPTR)
-        );
-        unitSelector_2->clear();
-        unitSelector_2->insertItems(0, QStringList()
-         << QApplication::translate("converterClass", "cm", Q_NULLPTR)
-         << QApplication::translate("converterClass", "m", Q_NULLPTR)
-         << QApplication::translate("converterClass", "nm", Q_NULLPTR)
-         << QApplication::translate("converterClass", "km", Q_NULLPTR)
-         << QApplication::translate("converterClass", "hm", Q_NULLPTR)
-         << QApplication::translate("converterClass", "dm", Q_NULLPTR)
-        );
         inputBeforeConversion->setText(QString());
-        categorySelector->clear();
-        categorySelector->insertItems(0, QStringList()
-         << QApplication::translate("converterClass", "Lungime", Q_NULLPTR)
-         << QApplication::translate("converterClass", "Volum", Q_NULLPTR)
-         << QApplication::translate("converterClass", "ETC", Q_NULLPTR)
-        );
         swapValues->setText(QString());
         swapUnits->setText(QString());
         menuFile->setTitle(QApplication::translate("converterClass", "File", Q_NULLPTR));
