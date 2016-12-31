@@ -76,6 +76,9 @@ void converter::initTree(rootNode **root)
 
 void converter::initWidgets(rootNode *root)
 {
+	this->resize(606, 150);
+	ui.unitSelector_1->clear();
+	ui.unitSelector_2->clear();
 	int categoryIndex = 0, unitIndex=0;
 	while (categoryIndex < root->numberOfCategories)
 		ui.categorySelector->insertItem(categoryIndex, root->categories[categoryIndex++]->categoryName);
@@ -103,12 +106,41 @@ void converter::on_categorySelector_currentTextChanged()
 		ui.unitSelector_1->insertItem(unitIndex, tempCategory->units[unitIndex]->unitNameShort);
 		ui.unitSelector_2->insertItem(unitIndex, tempCategory->units[unitIndex++]->unitNameShort);
 	}
-
+	on_toggleCategoryDetails_toggled();
 }
 
 void converter::on_inputBeforeConversion_textEdited()
 {	//things to do when user inputs values in the first lineedit
 	//ui.inputAfterConversion->setText(valueBeforeConversion);
+}
+
+void converter::on_toggleCategoryDetails_toggled()
+{
+	if (ui.toggleCategoryDetails->isChecked())
+	{
+		int detailsLabelHeight = 0, i;
+		QString categoryDetailsText;
+		detailsLabelHeight = root->categories[ui.categorySelector->currentIndex()]->numberOfUnits;
+		detailsLabelHeight *= ui.categoryDetails->fontMetrics().height();
+		detailsLabelHeight += 10;
+		ui.categoryDetails->resize(575, detailsLabelHeight);
+		for (i = 0; i < root->categories[ui.categorySelector->currentIndex()]->numberOfUnits; i++)
+		{
+			categoryDetailsText.append("<b>");
+			categoryDetailsText.append(root->categories[ui.categorySelector->currentIndex()]->units[i]->unitNameShort);
+			categoryDetailsText.append("</b> = ");
+			categoryDetailsText.append(root->categories[ui.categorySelector->currentIndex()]->units[i]->unitNameLong);
+			categoryDetailsText.append("<br/>");
+		}
+		ui.categoryDetails->setText(categoryDetailsText);
+		ui.categoryDetails->show();
+		this->resize(606, 150 + detailsLabelHeight + 10);
+	}
+	else
+	{
+		ui.categoryDetails->hide();
+		this->resize(606, 150);
+	}
 }
 
 void converter::on_swapValues_pressed()

@@ -9,6 +9,9 @@ gal / galon / 0.3
 lx / lux / 0.001
 cd / candela / 0.005
 <Date>
-mb / megabytes / 1024
-kb / kilobytes / 1
-tb / terabytes / 4048
+b / bit / 1
+B / Byte / 8
+KB / kilobytes / 1
+MB / megabytes / 1024
+GB / gigabyte / 2048
+TB / terabytes / 4096

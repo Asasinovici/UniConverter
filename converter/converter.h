@@ -27,6 +27,7 @@ struct rootNode {
 };
 
 
+//##################################################################
 class converter : public QMainWindow
 {
 	Q_OBJECT
@@ -41,6 +42,7 @@ public:
 private slots:
 	void on_swapValues_pressed();
 	void on_swapUnits_pressed();
+	void on_toggleCategoryDetails_toggled();
 	void on_categorySelector_currentTextChanged();
 	void on_inputBeforeConversion_textEdited();
 	//void on_inputAfterConversion_textEdited();

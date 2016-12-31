@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -39,6 +40,8 @@ public:
     QComboBox *categorySelector;
     QPushButton *swapValues;
     QPushButton *swapUnits;
+    QPushButton *toggleCategoryDetails;
+    QLabel *categoryDetails;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuAjutor;
@@ -47,14 +50,14 @@ public:
     {
         if (converterClass->objectName().isEmpty())
             converterClass->setObjectName(QStringLiteral("converterClass"));
-        converterClass->resize(600, 170);
+        converterClass->resize(606, 150);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(converterClass->sizePolicy().hasHeightForWidth());
         converterClass->setSizePolicy(sizePolicy);
-        converterClass->setMinimumSize(QSize(600, 170));
-        converterClass->setMaximumSize(QSize(600, 170));
+        converterClass->setMinimumSize(QSize(606, 150));
+        converterClass->setMaximumSize(QSize(606, 16777215));
         converterClass->setStyleSheet(QStringLiteral(""));
         actionSoidfhgbuiaebgae = new QAction(converterClass);
         actionSoidfhgbuiaebgae->setObjectName(QStringLiteral("actionSoidfhgbuiaebgae"));
@@ -69,7 +72,7 @@ public:
         unitSelector_1 = new QComboBox(centralWidget);
         unitSelector_1->setObjectName(QStringLiteral("unitSelector_1"));
         unitSelector_1->setEnabled(true);
-        unitSelector_1->setGeometry(QRect(509, 10, 61, 30));
+        unitSelector_1->setGeometry(QRect(529, 10, 61, 30));
         QFont font;
         font.setFamily(QStringLiteral("Aero Matics"));
         unitSelector_1->setFont(font);
@@ -118,7 +121,7 @@ public:
         unitSelector_2 = new QComboBox(centralWidget);
         unitSelector_2->setObjectName(QStringLiteral("unitSelector_2"));
         unitSelector_2->setEnabled(true);
-        unitSelector_2->setGeometry(QRect(509, 90, 61, 30));
+        unitSelector_2->setGeometry(QRect(529, 90, 61, 30));
         unitSelector_2->setFont(font);
         unitSelector_2->setMouseTracking(false);
         unitSelector_2->setToolTipDuration(1);
@@ -164,7 +167,7 @@ public:
 ""));
         inputBeforeConversion = new QLineEdit(centralWidget);
         inputBeforeConversion->setObjectName(QStringLiteral("inputBeforeConversion"));
-        inputBeforeConversion->setGeometry(QRect(210, 10, 300, 30));
+        inputBeforeConversion->setGeometry(QRect(230, 10, 300, 30));
         QPalette palette;
         inputBeforeConversion->setPalette(palette);
         inputBeforeConversion->setStyleSheet(QStringLiteral("font: 17pt \"Aero Matics\";"));
@@ -172,7 +175,7 @@ public:
         inputAfterConversion = new QLineEdit(centralWidget);
         inputAfterConversion->setObjectName(QStringLiteral("inputAfterConversion"));
         inputAfterConversion->setEnabled(true);
-        inputAfterConversion->setGeometry(QRect(210, 90, 300, 30));
+        inputAfterConversion->setGeometry(QRect(230, 90, 300, 30));
         inputAfterConversion->setStyleSheet(QLatin1String("font: 17pt \"Aero Matics\";\n"
 "\n"
 ""));
@@ -181,7 +184,7 @@ public:
         categorySelector = new QComboBox(centralWidget);
         categorySelector->setObjectName(QStringLiteral("categorySelector"));
         categorySelector->setEnabled(true);
-        categorySelector->setGeometry(QRect(20, 30, 161, 61));
+        categorySelector->setGeometry(QRect(16, 10, 200, 70));
         categorySelector->setFont(font);
         categorySelector->setMouseTracking(false);
         categorySelector->setToolTipDuration(1);
@@ -227,7 +230,7 @@ public:
 ""));
         swapValues = new QPushButton(centralWidget);
         swapValues->setObjectName(QStringLiteral("swapValues"));
-        swapValues->setGeometry(QRect(210, 50, 43, 30));
+        swapValues->setGeometry(QRect(230, 50, 43, 30));
         swapValues->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
@@ -248,7 +251,7 @@ public:
 "}"));
         swapUnits = new QPushButton(centralWidget);
         swapUnits->setObjectName(QStringLiteral("swapUnits"));
-        swapUnits->setGeometry(QRect(520, 50, 40, 30));
+        swapUnits->setGeometry(QRect(540, 50, 40, 30));
         swapUnits->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
@@ -267,10 +270,51 @@ public:
 "                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
 "	background-image: url(:/converter/Resources/swapUnits-pressed.png);\n"
 "}"));
+        toggleCategoryDetails = new QPushButton(centralWidget);
+        toggleCategoryDetails->setObjectName(QStringLiteral("toggleCategoryDetails"));
+        toggleCategoryDetails->setGeometry(QRect(15, 90, 200, 30));
+        toggleCategoryDetails->setMinimumSize(QSize(160, 0));
+        toggleCategoryDetails->setStyleSheet(QLatin1String("QPushButton {\n"
+"    border: 1px solid gray;\n"
+"    padding: 1px 5px 1px 5px;\n"
+"	font-family: \"Aero Matics\";\n"
+"	font-size: 19px;\n"
+"	selection-color: #000000;\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 rgb(255, 255, 255), stop: 1.0 rgb(233, 233, 233));\n"
+"}\n"
+"QPushButton::pressed {\n"
+"    border: 1px solid gray;\n"
+"    padding: 1px 5px 1px 5px;\n"
+"	font-family: \"Aero Matics\";\n"
+"	font-size: 19px;\n"
+"	selection-color: #000000;\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 rgb(220, 220, 220), stop: 1.0 rgb(240, 240, 240));\n"
+"}\n"
+"QPushButton::checked {\n"
+"    border: 1px solid gray;\n"
+"    padding: 1px 5px 1px 5px;\n"
+"	font-family: \"Aero Matics\";\n"
+"	font-size: 19px;\n"
+"	selection-color: #000000;\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 rgb(220, 220, 220), stop: 1.0 rgb(240, 240, 240));\n"
+"}"));
+        toggleCategoryDetails->setCheckable(true);
+        toggleCategoryDetails->setChecked(false);
+        categoryDetails = new QLabel(centralWidget);
+        categoryDetails->setObjectName(QStringLiteral("categoryDetails"));
+        categoryDetails->setGeometry(QRect(15, 130, 575, 30));
+        categoryDetails->setStyleSheet(QLatin1String("border: 1px solid darkgrey;\n"
+"background-color: rgb(255, 255, 255);\n"
+"font-family: \"Aero Matics\";\n"
+"font-size: 19px;"));
+        categoryDetails->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         converterClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(converterClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 21));
+        menuBar->setGeometry(QRect(0, 0, 606, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuAjutor = new QMenu(menuBar);
@@ -299,6 +343,8 @@ public:
         inputBeforeConversion->setText(QString());
         swapValues->setText(QString());
         swapUnits->setText(QString());
+        toggleCategoryDetails->setText(QApplication::translate("converterClass", "Detalii", Q_NULLPTR));
+        categoryDetails->setText(QString());
         menuFile->setTitle(QApplication::translate("converterClass", "File", Q_NULLPTR));
         menuAjutor->setTitle(QApplication::translate("converterClass", "Ajutor", Q_NULLPTR));
     } // retranslateUi
