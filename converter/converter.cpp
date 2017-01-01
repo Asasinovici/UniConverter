@@ -1,4 +1,5 @@
-#include "converter.h"
+﻿#include "converter.h"
+#include "adddialog.hpp"
 
 converter::converter(QWidget *parent)
 	: QMainWindow(parent)
@@ -11,6 +12,17 @@ converter::converter(QWidget *parent)
 
 	// initialize widgets with data from tree
 	initWidgets(root);
+}
+
+void converter::on_actionAddUnit_triggered()
+{
+	addDialog addUnitDialog;
+	addUnitDialog.exec();
+}
+
+void converter::on_actionInformatii_triggered()
+{
+	helpWindow.exec();
 }
 
 void converter::initTree(rootNode **root)
@@ -88,6 +100,13 @@ void converter::initWidgets(rootNode *root)
 		ui.unitSelector_1->insertItem(unitIndex, tempCategory->units[unitIndex]->unitNameShort);
 		ui.unitSelector_2->insertItem(unitIndex, tempCategory->units[unitIndex++]->unitNameShort);
 	}
+	// TO DO : fix the unicode thing
+	helpWindow.setWindowTitle("Despre UniConverter");
+	helpWindow.setStyleSheet("font-size: 17px;");
+	helpWindow.setText("<center><b>Informații despre UniConverter.</b></center>");
+	helpWindow.setInformativeText("<center><p>UniConverter este un convertor open source între unități de măsură.</p><p>Creat și întreținut de Asanovici Mihai.</p><p>Adresa proiectului: <a href='https://github.com/Asasinovici/UniConverter'>https://github.com/Asasinovici/UniConverter</a></p></center>");
+	helpWindow.setStandardButtons(QMessageBox::Ok);
+	helpWindow.setDefaultButton(QMessageBox::Ok);
 }
 
 void converter::on_categorySelector_currentTextChanged()

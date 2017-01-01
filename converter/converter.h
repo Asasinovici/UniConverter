@@ -4,6 +4,7 @@
 #include <QtCore>
 #include <QtWidgets/QMainWindow>
 #include "ui_converter.h"
+#include <QMessagebox>
 
 #define MAX_CATEGORIES 30
 #define MAX_UNITS_PER_CATEGORY 50
@@ -37,6 +38,7 @@ public:
 	rootNode *root = new rootNode;
 	void initTree(rootNode **root);
 	void initWidgets(rootNode *root);
+	QMessageBox helpWindow;
 	~converter();
 
 private slots:
@@ -45,6 +47,8 @@ private slots:
 	void on_toggleCategoryDetails_toggled();
 	void on_categorySelector_currentTextChanged();
 	void on_inputBeforeConversion_textEdited();
+	void on_actionInformatii_triggered();
+	void on_actionAddUnit_triggered();
 	//void on_inputAfterConversion_textEdited();
 
 private:

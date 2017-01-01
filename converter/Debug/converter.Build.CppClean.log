@@ -3,9 +3,13 @@ c:\users\asasi\desktop\project\project1\converter\converter\debug\qrc_converter.
 c:\users\asasi\desktop\project\project1\converter\converter\debug\main.obj
 c:\users\asasi\desktop\project\project1\converter\converter\debug\converter.obj
 c:\users\asasi\desktop\project\project1\converter\converter\debug\moc_converter.obj
-c:\users\asasi\desktop\project\project1\converter\converter\generatedfiles\debug\moc_converter.cpp
+c:\users\asasi\desktop\project\project1\converter\converter\debug\adddialog.obj
+c:\users\asasi\desktop\project\project1\converter\converter\debug\moc_adddialog.obj
 c:\users\asasi\desktop\project\project1\converter\converter\generatedfiles\qrc_converter.cpp
 c:\users\asasi\desktop\project\project1\converter\converter\generatedfiles\ui_converter.h
+c:\users\asasi\desktop\project\project1\converter\converter\generatedfiles\debug\moc_adddialog.cpp
+c:\users\asasi\desktop\project\project1\converter\converter\generatedfiles\debug\moc_converter.cpp
+c:\users\asasi\desktop\project\project1\converter\converter\generatedfiles\ui_adddialog.h
 c:\users\asasi\desktop\project\project1\converter\win32\debug\converter.ilk
 c:\users\asasi\desktop\project\project1\converter\win32\debug\converter.exe
 c:\users\asasi\desktop\project\project1\converter\win32\debug\converter.pdb

@@ -446,7 +446,7 @@ font-size: 19px;</string>
      <string>File</string>
     </property>
     <addaction name="actionExit"/>
-    <addaction name="actionAdauga_unitate_de_masura"/>
+    <addaction name="actionAddUnit"/>
    </widget>
    <widget class="QMenu" name="menuAjutor">
     <property name="title">
@@ -469,10 +469,10 @@ font-size: 19px;</string>
   </action>
   <action name="actionInformatii">
    <property name="text">
-    <string>Informatii</string>
+    <string>Despre UniConverter</string>
    </property>
   </action>
-  <action name="actionAdauga_unitate_de_masura">
+  <action name="actionAddUnit">
    <property name="text">
     <string>Adauga unitate de masura</string>
    </property>

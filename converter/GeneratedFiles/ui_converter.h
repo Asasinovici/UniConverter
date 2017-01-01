@@ -31,7 +31,7 @@ public:
     QAction *actionSoidfhgbuiaebgae;
     QAction *actionExit;
     QAction *actionInformatii;
-    QAction *actionAdauga_unitate_de_masura;
+    QAction *actionAddUnit;
     QWidget *centralWidget;
     QComboBox *unitSelector_1;
     QComboBox *unitSelector_2;
@@ -65,8 +65,8 @@ public:
         actionExit->setObjectName(QStringLiteral("actionExit"));
         actionInformatii = new QAction(converterClass);
         actionInformatii->setObjectName(QStringLiteral("actionInformatii"));
-        actionAdauga_unitate_de_masura = new QAction(converterClass);
-        actionAdauga_unitate_de_masura->setObjectName(QStringLiteral("actionAdauga_unitate_de_masura"));
+        actionAddUnit = new QAction(converterClass);
+        actionAddUnit->setObjectName(QStringLiteral("actionAddUnit"));
         centralWidget = new QWidget(converterClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         unitSelector_1 = new QComboBox(centralWidget);
@@ -324,7 +324,7 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuAjutor->menuAction());
         menuFile->addAction(actionExit);
-        menuFile->addAction(actionAdauga_unitate_de_masura);
+        menuFile->addAction(actionAddUnit);
         menuAjutor->addAction(actionInformatii);
 
         retranslateUi(converterClass);
@@ -338,8 +338,8 @@ public:
         converterClass->setWindowTitle(QApplication::translate("converterClass", "UniConverter", Q_NULLPTR));
         actionSoidfhgbuiaebgae->setText(QApplication::translate("converterClass", "Exit", Q_NULLPTR));
         actionExit->setText(QApplication::translate("converterClass", "Inchide", Q_NULLPTR));
-        actionInformatii->setText(QApplication::translate("converterClass", "Informatii", Q_NULLPTR));
-        actionAdauga_unitate_de_masura->setText(QApplication::translate("converterClass", "Adauga unitate de masura", Q_NULLPTR));
+        actionInformatii->setText(QApplication::translate("converterClass", "Despre UniConverter", Q_NULLPTR));
+        actionAddUnit->setText(QApplication::translate("converterClass", "Adauga unitate de masura", Q_NULLPTR));
         inputBeforeConversion->setText(QString());
         swapValues->setText(QString());
         swapUnits->setText(QString());

@@ -1,3 +1,7 @@
 ﻿  converter.cpp
+converter.cpp(106): warning C4566: character represented by universal-character-name '\u021B' cannot be represented in the current code page (1252)
+converter.cpp(107): warning C4566: character represented by universal-character-name '\u0103' cannot be represented in the current code page (1252)
+converter.cpp(107): warning C4566: character represented by universal-character-name '\u021B' cannot be represented in the current code page (1252)
+converter.cpp(107): warning C4566: character represented by universal-character-name '\u0219' cannot be represented in the current code page (1252)
   converter.vcxproj -> C:\Users\asasi\Desktop\project\Project1\converter\Win32\Debug\converter.exe
   converter.vcxproj -> C:\Users\asasi\Desktop\project\Project1\converter\Win32\Debug\converter.pdb (Full PDB)
