@@ -1,7 +1,13 @@
-<Lungime>
-cm / centimetru / 0.11
+﻿<Lungime>
+cm / centimetru / 0.01
 m / metru / 1
 dm / decimetru / 0.1
+km / kilometru / 1000
+dam / decametru / 10
+hm / hectometru / 100
+ft / foot(picioare) / 3.2808399
+in / inch / 39.3700787
+mi / milă / 0.000621371192
 <Volum>
 l / litru / 1
 gal / galon / 0.3

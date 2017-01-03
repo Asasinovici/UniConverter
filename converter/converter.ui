@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>606</width>
+    <width>631</width>
     <height>150</height>
    </rect>
   </property>
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>606</width>
+    <width>631</width>
     <height>150</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>606</width>
+    <width>631</width>
     <height>16777215</height>
    </size>
   </property>
@@ -43,7 +43,7 @@
      <rect>
       <x>529</x>
       <y>10</y>
-      <width>61</width>
+      <width>86</width>
       <height>30</height>
      </rect>
     </property>
@@ -55,6 +55,9 @@
     </property>
     <property name="mouseTracking">
      <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string/>
     </property>
     <property name="toolTipDuration">
      <number>1</number>
@@ -80,7 +83,6 @@ QComboBox:!editable, QComboBox::drop-down:editable {
                                  stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
 }
 
-/* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
@@ -90,7 +92,17 @@ QComboBox:!editable:on, QComboBox::drop-down:editable:on {
 
 QComboBox::drop-down {
 	border: 0px solid white;
-	background-color: rgba(255, 255, 255, 0%);
+    background-color: rgba(255, 255, 255, 0%);
+	width: 19px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/converter/Resources/down-arrow-small.png);
+}
+
+
+QComboBox::down-arrow:on {
+	image: url(:/converter/Resources/down-arrow-small-inverted.png);
 }
 
 QComboBox QAbstractItemView {
@@ -101,6 +113,15 @@ QComboBox QAbstractItemView {
     padding: 0px 3px 3px 3px;
 }
 </string>
+    </property>
+    <property name="maxVisibleItems">
+     <number>15</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
     </property>
    </widget>
    <widget class="QComboBox" name="unitSelector_2">
@@ -111,7 +132,7 @@ QComboBox QAbstractItemView {
      <rect>
       <x>529</x>
       <y>90</y>
-      <width>61</width>
+      <width>86</width>
       <height>30</height>
      </rect>
     </property>
@@ -123,6 +144,9 @@ QComboBox QAbstractItemView {
     </property>
     <property name="mouseTracking">
      <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string/>
     </property>
     <property name="toolTipDuration">
      <number>1</number>
@@ -148,7 +172,6 @@ QComboBox:!editable, QComboBox::drop-down:editable {
                                  stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
 }
 
-/* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
@@ -158,7 +181,17 @@ QComboBox:!editable:on, QComboBox::drop-down:editable:on {
 
 QComboBox::drop-down {
 	border: 0px solid white;
-	background-color: rgba(255, 255, 255, 0%);
+    background-color: rgba(255, 255, 255, 0%);
+	width: 19px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/converter/Resources/down-arrow-small.png);
+}
+
+
+QComboBox::down-arrow:on {
+	image: url(:/converter/Resources/down-arrow-small-inverted.png);
 }
 
 QComboBox QAbstractItemView {
@@ -169,6 +202,9 @@ QComboBox QAbstractItemView {
     padding: 0px 3px 3px 3px;
 }
 </string>
+    </property>
+    <property name="maxVisibleItems">
+     <number>15</number>
     </property>
    </widget>
    <widget class="QLineEdit" name="inputBeforeConversion">
@@ -186,6 +222,18 @@ QComboBox QAbstractItemView {
       <inactive/>
       <disabled/>
      </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>Aero Matics</family>
+      <pointsize>17</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 17pt &quot;Aero Matics&quot;;</string>
@@ -211,8 +259,7 @@ QComboBox QAbstractItemView {
     </property>
     <property name="styleSheet">
      <string notr="true">font: 17pt &quot;Aero Matics&quot;;
-
-</string>
+background-color: rgb(240, 240, 240);</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -242,6 +289,9 @@ QComboBox QAbstractItemView {
     <property name="mouseTracking">
      <bool>false</bool>
     </property>
+    <property name="toolTip">
+     <string/>
+    </property>
     <property name="toolTipDuration">
      <number>1</number>
     </property>
@@ -266,7 +316,6 @@ QComboBox:!editable, QComboBox::drop-down:editable {
                                  stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
 }
 
-/* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
@@ -276,7 +325,17 @@ QComboBox:!editable:on, QComboBox::drop-down:editable:on {
 
 QComboBox::drop-down {
 	border: 0px solid white;
-	background-color: rgba(255, 255, 255, 0%);
+    background-color: rgba(255, 255, 255, 0%);
+	width: 29px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/converter/Resources/down-arrow-big.png);
+}
+
+
+QComboBox::down-arrow:on {
+	image: url(:/converter/Resources/down-arrow-big-inverted.png);
 }
 
 QComboBox QAbstractItemView {
@@ -297,6 +356,9 @@ QComboBox QAbstractItemView {
       <width>43</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Schimbați valoarea introdusă cu cea rezultată.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -325,11 +387,14 @@ QPushButton::pressed {
    <widget class="QPushButton" name="swapUnits">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>550</x>
       <y>50</y>
       <width>40</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shimbă unitățile de măsură între ele.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -369,6 +434,9 @@ QPushButton::pressed {
       <width>160</width>
       <height>0</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Arată detalii despre unitatea de măsură selectată.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -414,7 +482,7 @@ QPushButton::checked {
      <rect>
       <x>15</x>
       <y>130</y>
-      <width>575</width>
+      <width>600</width>
       <height>30</height>
      </rect>
     </property>
@@ -437,7 +505,7 @@ font-size: 19px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>606</width>
+     <width>631</width>
      <height>21</height>
     </rect>
    </property>
