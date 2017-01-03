@@ -1,7 +1,7 @@
 # UniConverter
-Convertor intre unitati de masura.
-
-Things needed to run this properly:
+Convertor intre unitati de masura.<br />
+<br />
+Things needed to run this properly:<br />
 1. The font from the "INSTALL THIS FONT" folder.<br />
 2. Qt 5.7.<br />
 3. QtPackage from VS>Tools>Extensions and updates>Online>Search for "Qt" and it will pop up.<br />
