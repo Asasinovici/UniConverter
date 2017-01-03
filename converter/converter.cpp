@@ -17,6 +17,7 @@ converter::converter(QWidget *parent)
 void converter::on_actionAddUnit_triggered()
 {
 	addDialog addUnitDialog;
+	addUnitDialog.setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
 	addUnitDialog.exec();
 }
 
@@ -89,6 +90,7 @@ void converter::initTree(rootNode **root)
 void converter::initWidgets(rootNode *root)
 {
 	this->resize(606, 150);
+	this->setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
 	ui.unitSelector_1->clear();
 	ui.unitSelector_2->clear();
 	int categoryIndex = 0, unitIndex=0;
@@ -101,10 +103,11 @@ void converter::initWidgets(rootNode *root)
 		ui.unitSelector_2->insertItem(unitIndex, tempCategory->units[unitIndex++]->unitNameShort);
 	}
 	// TO DO : fix the unicode thing
+	helpWindow.setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
 	helpWindow.setWindowTitle("Despre UniConverter");
 	helpWindow.setStyleSheet("font-size: 17px;");
-	helpWindow.setText("<center><b>Informații despre UniConverter.</b></center>");
-	helpWindow.setInformativeText("<center><p>UniConverter este un convertor open source între unități de măsură.</p><p>Creat și întreținut de Asanovici Mihai.</p><p>Adresa proiectului: <a href='https://github.com/Asasinovici/UniConverter'>https://github.com/Asasinovici/UniConverter</a></p></center>");
+	helpWindow.setText("<center><b>Informatii despre UniConverter.</b></center>");
+	helpWindow.setInformativeText("<center><p>UniConverter este un convertor open source intre unitati de masura.</p><p>Creat si intretinut de Asanovici Mihai.</p><p>Adresa proiectului: <a href='https://github.com/Asasinovici/UniConverter'>https://github.com/Asasinovici/UniConverter</a></p></center>");
 	helpWindow.setStandardButtons(QMessageBox::Ok);
 	helpWindow.setDefaultButton(QMessageBox::Ok);
 }

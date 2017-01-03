@@ -5,5 +5,10 @@
         <file>Resources/swapValues-pressed.png</file>
         <file>Resources/swapUnits.png</file>
         <file>Resources/swapUnits-pressed.png</file>
+        <file>Resources/windowIcon.png</file>
+        <file>Resources/down-arrow-big.png</file>
+        <file>Resources/down-arrow-big-inverted.png</file>
+        <file>Resources/down-arrow-small.png</file>
+        <file>Resources/down-arrow-small-inverted.png</file>
     </qresource>
 </RCC>

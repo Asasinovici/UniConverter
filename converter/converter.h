@@ -9,6 +9,7 @@
 #define MAX_CATEGORIES 30
 #define MAX_UNITS_PER_CATEGORY 50
 #define INPUT_FILE_NAME "Resources/Conversion Table.txt"
+#define MAIN_WINDOW_ICON_PATH "Resources/windowIcon.png"
 
 struct unitNode {
 	QString unitNameShort;
