@@ -2,7 +2,7 @@
 Convertor intre unitati de masura.
 
 Things needed to run this properly:
-1. Install the font from the "INSTALL THIS FONT" folder.
-2. Install Qt.
-3. Instal and configure QtPackage from VS>Tools>Extensions and updates>Online>Search for "Qt" and it will pop up.
-
+1. The font from the "INSTALL THIS FONT" folder.<br />
+2. Qt 5.7.<br />
+3. QtPackage from VS>Tools>Extensions and updates>Online>Search for "Qt" and it will pop up.<br />
+4. Boost libraries 1.63, Boost Multiprecision to be precise. Add the directory to the project's Additional Include paths. I had it the root of my C: drive.<br />
