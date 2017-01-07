@@ -5,6 +5,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_converter.h"
 #include <QMessagebox>
+#include <boost/multiprecision/cpp_bin_float.hpp>
 
 #define MAX_CATEGORIES 30
 #define MAX_UNITS_PER_CATEGORY 50
@@ -46,11 +47,12 @@ private slots:
 	void on_swapValues_pressed();
 	void on_swapUnits_pressed();
 	void on_toggleCategoryDetails_toggled();
-	void on_categorySelector_currentTextChanged();
+	void on_categorySelector_activated();
 	void on_inputBeforeConversion_textEdited();
 	void on_actionInformatii_triggered();
 	void on_actionAddUnit_triggered();
-	//void on_inputAfterConversion_textEdited();
+	void on_unitSelector_1_activated();
+	void on_unitSelector_2_activated();
 
 private:
 	Ui::converterClass ui;

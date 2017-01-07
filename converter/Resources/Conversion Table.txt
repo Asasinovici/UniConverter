@@ -1,23 +1,32 @@
 ﻿<Lungime>
-cm / centimetru / 0.01
+nm / nanometru / 1000000000
+μm / micrometru / 1000000
+cm / centimetru / 100
 m / metru / 1
-dm / decimetru / 0.1
-km / kilometru / 1000
-dam / decametru / 10
-hm / hectometru / 100
+dm / decimetru / 10
+km / kilometru / 0.001
+dam / decametru / 0.1
+hm / hectometru / 0.01
 ft / foot(picioare) / 3.2808399
 in / inch / 39.3700787
 mi / milă / 0.000621371192
-<Volum>
-l / litru / 1
-gal / galon / 0.3
-<Lumina>
-lx / lux / 0.001
-cd / candela / 0.005
+<Masă>
+Kg / kilogram / 1
+g / gram / 1000
+mg / miligram / 1000000
+lbs / pound / 2.2046244202
+oz / uncie / 35.273990723
+t / tonă / 0.001
+ct / carat / 5000
+<Temperatură>
+C / Celsius / 1
+K / Kelvin / 274.15
+F / Farenheit / 33.8
 <Date>
-b / bit / 1
-B / Byte / 8
-KB / kilobytes / 1
-MB / megabytes / 1024
-GB / gigabyte / 2048
-TB / terabytes / 4096
+b / bit / 9007199254740992
+B / Byte / 1125899906842624
+KB / kilobyte / 1099511627776
+MB / megabyte / 1073741824
+GB / gigabyte / 1048576
+TB / terabyte / 1024
+PB / petabyte / 1

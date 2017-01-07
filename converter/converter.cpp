@@ -31,13 +31,14 @@ void converter::initTree(rootNode **root)
 	QFile inputFile(INPUT_FILE_NAME);
 
 	if (!inputFile.exists())
-	{	// throw error
+	{	// TO DO: throw error
 		ui.inputAfterConversion->setText("Error: File not found.");
 		inputFile.close();
 	}
 	else
 	{	// read file into tree
 		if (!inputFile.open(QIODevice::ReadOnly | QIODevice::Text))
+			// TO DO: throw error
 			ui.inputAfterConversion->setText("Error: File not found.");
 		QTextStream inputTextStream(&inputFile);
 		int categoryIter = 0, unitIter = 0;
@@ -102,27 +103,27 @@ void converter::initWidgets(rootNode *root)
 		ui.unitSelector_1->insertItem(unitIndex, tempCategory->units[unitIndex]->unitNameShort);
 		ui.unitSelector_2->insertItem(unitIndex, tempCategory->units[unitIndex++]->unitNameShort);
 	}
-	// TO DO : fix the unicode thing
 	helpWindow.setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
 	helpWindow.setWindowTitle("Despre UniConverter");
 	helpWindow.setStyleSheet("font-size: 17px;");
-	helpWindow.setText("<center><b>Informatii despre UniConverter.</b></center>");
-	helpWindow.setInformativeText("<center><p>UniConverter este un convertor open source intre unitati de masura.</p><p>Creat si intretinut de Asanovici Mihai.</p><p>Adresa proiectului: <a href='https://github.com/Asasinovici/UniConverter'>https://github.com/Asasinovici/UniConverter</a></p></center>");
+	helpWindow.setText(u8"<center><b>Informații despre UniConverter.</b></center>");
+	helpWindow.setInformativeText(u8"<center><p>UniConverter este un convertor open source între unități de măsură.</p><p>Creat și întreținut de Asanovici Mihai.</p><p>Pagina proiectului: <a href='https://github.com/Asasinovici/UniConverter'>https://github.com/Asasinovici/UniConverter</a></p></center>");
 	helpWindow.setStandardButtons(QMessageBox::Ok);
 	helpWindow.setDefaultButton(QMessageBox::Ok);
 }
 
-void converter::on_categorySelector_currentTextChanged()
+void converter::on_categorySelector_activated()
 {	// things to do when the user changes category
 	int categoryIndex = 0, unitIndex = 0;
 	ui.inputBeforeConversion->clear();
 	ui.inputAfterConversion->clear();
+	ui.unitSelector_1->clear();
+	ui.unitSelector_2->clear();
 
 	QString newCategoryName = ui.categorySelector->currentText();
 
 	categoryNode *tempCategory = root->categories[ui.categorySelector->currentIndex()];
-	ui.unitSelector_1->clear();
-	ui.unitSelector_2->clear();
+
 	while (unitIndex < tempCategory->numberOfUnits)
 	{
 		ui.unitSelector_1->insertItem(unitIndex, tempCategory->units[unitIndex]->unitNameShort);
@@ -133,7 +134,34 @@ void converter::on_categorySelector_currentTextChanged()
 
 void converter::on_inputBeforeConversion_textEdited()
 {	//things to do when user inputs values in the first lineedit
-	//ui.inputAfterConversion->setText(valueBeforeConversion);
+
+	// TO DO: check input so i dont get erros
+	using namespace boost::multiprecision;
+	std::string inputString = ui.inputBeforeConversion->text().toStdString(), outputString;
+	try
+	{
+		cpp_bin_float_50  input(inputString.c_str());
+
+		if (ui.unitSelector_1->currentIndex() == ui.unitSelector_2->currentIndex())
+			ui.inputAfterConversion->setText(QString::fromStdString(inputString));
+		else
+		{
+			cpp_bin_float_50 result("0");
+			cpp_bin_float_50  conversionFactorInput(root->categories[ui.categorySelector->currentIndex()]->units[ui.unitSelector_1->currentIndex()]->conversionFactor);
+			cpp_bin_float_50  conversionFactorOutput(root->categories[ui.categorySelector->currentIndex()]->units[ui.unitSelector_2->currentIndex()]->conversionFactor);
+			result = (input / conversionFactorInput) * conversionFactorOutput;
+			outputString = result.str();
+			ui.inputAfterConversion->setText(QString::fromStdString(outputString));//.replace("e", " x10^")
+		}
+		ui.swapValues->setDisabled(false);
+	}
+	catch (...)
+	{
+		// TODO: change style on invalid input
+		ui.swapValues->setDisabled(true);
+		ui.inputAfterConversion->setText(u8"Verificați datele de intrare!");
+	}
+
 }
 
 void converter::on_toggleCategoryDetails_toggled()
@@ -145,7 +173,7 @@ void converter::on_toggleCategoryDetails_toggled()
 		detailsLabelHeight = root->categories[ui.categorySelector->currentIndex()]->numberOfUnits;
 		detailsLabelHeight *= ui.categoryDetails->fontMetrics().height();
 		detailsLabelHeight += 10;
-		ui.categoryDetails->resize(575, detailsLabelHeight);
+		ui.categoryDetails->resize(635, detailsLabelHeight);
 		for (i = 0; i < root->categories[ui.categorySelector->currentIndex()]->numberOfUnits; i++)
 		{
 			categoryDetailsText.append("<b>");
@@ -156,12 +184,12 @@ void converter::on_toggleCategoryDetails_toggled()
 		}
 		ui.categoryDetails->setText(categoryDetailsText);
 		ui.categoryDetails->show();
-		this->resize(606, 150 + detailsLabelHeight + 10);
+		this->resize(661, 150 + detailsLabelHeight + 10);
 	}
 	else
 	{
 		ui.categoryDetails->hide();
-		this->resize(606, 150);
+		this->resize(661, 150);
 	}
 }
 
@@ -181,8 +209,18 @@ void converter::on_swapUnits_pressed()
 	tempIndex = ui.unitSelector_1->currentIndex();
 	ui.unitSelector_1->setCurrentIndex(ui.unitSelector_2->currentIndex());
 	ui.unitSelector_2->setCurrentIndex(tempIndex);
+	on_inputBeforeConversion_textEdited();
 }
 
+void converter::on_unitSelector_1_activated()
+{
+	on_inputBeforeConversion_textEdited();
+}
+
+void converter::on_unitSelector_2_activated()
+{
+	on_inputBeforeConversion_textEdited();
+}
 
 converter::~converter()
 {

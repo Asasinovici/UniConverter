@@ -50,14 +50,14 @@ public:
     {
         if (converterClass->objectName().isEmpty())
             converterClass->setObjectName(QStringLiteral("converterClass"));
-        converterClass->resize(631, 150);
+        converterClass->resize(661, 150);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(converterClass->sizePolicy().hasHeightForWidth());
         converterClass->setSizePolicy(sizePolicy);
-        converterClass->setMinimumSize(QSize(631, 150));
-        converterClass->setMaximumSize(QSize(631, 16777215));
+        converterClass->setMinimumSize(QSize(661, 150));
+        converterClass->setMaximumSize(QSize(661, 16777215));
         converterClass->setStyleSheet(QStringLiteral(""));
         actionSoidfhgbuiaebgae = new QAction(converterClass);
         actionSoidfhgbuiaebgae->setObjectName(QStringLiteral("actionSoidfhgbuiaebgae"));
@@ -72,9 +72,11 @@ public:
         unitSelector_1 = new QComboBox(centralWidget);
         unitSelector_1->setObjectName(QStringLiteral("unitSelector_1"));
         unitSelector_1->setEnabled(true);
-        unitSelector_1->setGeometry(QRect(529, 10, 86, 30));
+        unitSelector_1->setGeometry(QRect(559, 10, 86, 30));
         QFont font;
-        font.setFamily(QStringLiteral("Aero Matics"));
+        font.setFamily(QStringLiteral("Forgotten Futurist Rg"));
+        font.setBold(true);
+        font.setWeight(75);
         unitSelector_1->setFont(font);
         unitSelector_1->setMouseTracking(false);
         unitSelector_1->setToolTipDuration(1);
@@ -82,8 +84,9 @@ public:
         unitSelector_1->setStyleSheet(QLatin1String("QComboBox {\n"
 "    border: 1px solid gray;\n"
 "    padding: 0px 5px 0px 5px;\n"
-"	font-family: \"Aero Matics\";\n"
-"	font-size: 25px;\n"
+"	font-family: \"Forgotten Futurist Rg\";\n"
+"	font-size: 21px;\n"
+"	font-weight: bold;\n"
 "	selection-color: #000000;\n"
 "}\n"
 "\n"
@@ -115,8 +118,8 @@ public:
 "\n"
 "\n"
 "QComboBox::down-arrow:on {\n"
-"	image: url(:/converter/Resources/down-arrow-small-inver"
-                        "ted.png);\n"
+"	image: url(:/converte"
+                        "r/Resources/down-arrow-small-inverted.png);\n"
 "}\n"
 "\n"
 "QComboBox QAbstractItemView {\n"
@@ -132,7 +135,7 @@ public:
         unitSelector_2 = new QComboBox(centralWidget);
         unitSelector_2->setObjectName(QStringLiteral("unitSelector_2"));
         unitSelector_2->setEnabled(true);
-        unitSelector_2->setGeometry(QRect(529, 90, 86, 30));
+        unitSelector_2->setGeometry(QRect(559, 90, 86, 30));
         unitSelector_2->setFont(font);
         unitSelector_2->setMouseTracking(false);
         unitSelector_2->setToolTipDuration(1);
@@ -140,8 +143,9 @@ public:
         unitSelector_2->setStyleSheet(QLatin1String("QComboBox {\n"
 "    border: 1px solid gray;\n"
 "    padding: 0px 5px 0px 5px;\n"
-"	font-family: \"Aero Matics\";\n"
-"	font-size: 25px;\n"
+"	font-family: \"Forgotten Futurist Rg\";\n"
+"	font-size: 21px;\n"
+"	font-weight: bold;\n"
 "	selection-color: #000000;\n"
 "}\n"
 "\n"
@@ -173,8 +177,8 @@ public:
 "\n"
 "\n"
 "QComboBox::down-arrow:on {\n"
-"	image: url(:/converter/Resources/down-arrow-small-inver"
-                        "ted.png);\n"
+"	image: url(:/converte"
+                        "r/Resources/down-arrow-small-inverted.png);\n"
 "}\n"
 "\n"
 "QComboBox QAbstractItemView {\n"
@@ -188,39 +192,41 @@ public:
         unitSelector_2->setMaxVisibleItems(15);
         inputBeforeConversion = new QLineEdit(centralWidget);
         inputBeforeConversion->setObjectName(QStringLiteral("inputBeforeConversion"));
-        inputBeforeConversion->setGeometry(QRect(230, 10, 300, 30));
+        inputBeforeConversion->setGeometry(QRect(260, 10, 300, 30));
         QPalette palette;
         inputBeforeConversion->setPalette(palette);
         QFont font1;
-        font1.setFamily(QStringLiteral("Aero Matics"));
+        font1.setFamily(QStringLiteral("Forgotten Futurist Rg"));
         font1.setPointSize(17);
         font1.setBold(false);
         font1.setItalic(false);
         font1.setWeight(50);
         inputBeforeConversion->setFont(font1);
-        inputBeforeConversion->setStyleSheet(QStringLiteral("font: 17pt \"Aero Matics\";"));
+        inputBeforeConversion->setStyleSheet(QStringLiteral("font: 17pt \"Forgotten Futurist Rg\";"));
         inputBeforeConversion->setClearButtonEnabled(true);
         inputAfterConversion = new QLineEdit(centralWidget);
         inputAfterConversion->setObjectName(QStringLiteral("inputAfterConversion"));
         inputAfterConversion->setEnabled(true);
-        inputAfterConversion->setGeometry(QRect(230, 90, 300, 30));
-        inputAfterConversion->setStyleSheet(QLatin1String("font: 17pt \"Aero Matics\";\n"
+        inputAfterConversion->setGeometry(QRect(260, 90, 300, 30));
+        inputAfterConversion->setStyleSheet(QLatin1String("font: 17pt \"Forgotten Futurist Rg\";\n"
 "background-color: rgb(240, 240, 240);"));
         inputAfterConversion->setReadOnly(true);
         inputAfterConversion->setClearButtonEnabled(false);
         categorySelector = new QComboBox(centralWidget);
         categorySelector->setObjectName(QStringLiteral("categorySelector"));
         categorySelector->setEnabled(true);
-        categorySelector->setGeometry(QRect(16, 10, 200, 70));
-        categorySelector->setFont(font);
+        categorySelector->setGeometry(QRect(11, 10, 230, 70));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Forgotten Futurist Rg"));
+        categorySelector->setFont(font2);
         categorySelector->setMouseTracking(false);
         categorySelector->setToolTipDuration(1);
         categorySelector->setAutoFillBackground(false);
         categorySelector->setStyleSheet(QLatin1String("QComboBox {\n"
 "    border: 1px solid gray;\n"
 "    padding: 5px 5px 5px 15px;\n"
-"	font-family: \"Aero Matics\";\n"
-"	font-size: 31px;\n"
+"	font-family: \"Forgotten Futurist Rg\";\n"
+"	font-size: 33px;\n"
 "	selection-color: #000000;\n"
 "}\n"
 "\n"
@@ -243,7 +249,7 @@ public:
 "QComboBox::drop-down {\n"
 "	border: 0px solid white;\n"
 "    background-color: rgba(255, 255, 255, 0%);\n"
-"	width: 27px;\n"
+"	width: 29px;\n"
 "}\n"
 "\n"
 "QComboBox::down-arrow {\n"
@@ -252,8 +258,8 @@ public:
 "\n"
 "\n"
 "QComboBox::down-arrow:on {\n"
-"	image: url(:/converter/Resources/down-arrow-big-inverted"
-                        ".png);\n"
+"	image: url(:/converter/Resources/down-arrow-bi"
+                        "g-inverted.png);\n"
 "}\n"
 "\n"
 "QComboBox QAbstractItemView {\n"
@@ -266,7 +272,7 @@ public:
 ""));
         swapValues = new QPushButton(centralWidget);
         swapValues->setObjectName(QStringLiteral("swapValues"));
-        swapValues->setGeometry(QRect(230, 50, 43, 30));
+        swapValues->setGeometry(QRect(260, 50, 43, 30));
         swapValues->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
@@ -284,10 +290,20 @@ public:
 "	  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);\n"
 "	background-image: url(:/converter/Resources/swapValues-pressed.png);\n"
+"}\n"
+"QPushButton::disabled {\n"
+"    border: 1px solid gray;\n"
+"    padding: 1px 5px 1px 5px;\n"
+"	font-size: 17px;\n"
+"	selection-color: #000000;\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);\n"
+"	background-image: url(:/converter/R"
+                        "esources/swapValues-pressed.png);\n"
 "}"));
         swapUnits = new QPushButton(centralWidget);
         swapUnits->setObjectName(QStringLiteral("swapUnits"));
-        swapUnits->setGeometry(QRect(550, 50, 40, 30));
+        swapUnits->setGeometry(QRect(580, 50, 40, 30));
         swapUnits->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
@@ -308,32 +324,31 @@ public:
 "}"));
         toggleCategoryDetails = new QPushButton(centralWidget);
         toggleCategoryDetails->setObjectName(QStringLiteral("toggleCategoryDetails"));
-        toggleCategoryDetails->setGeometry(QRect(15, 90, 200, 30));
+        toggleCategoryDetails->setGeometry(QRect(10, 90, 230, 30));
         toggleCategoryDetails->setMinimumSize(QSize(160, 0));
         toggleCategoryDetails->setStyleSheet(QLatin1String("QPushButton {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
-"	font-family: \"Aero Matics\";\n"
+"	font-family: \"Forgotten Futurist Rg\";\n"
+"	font-weight: bold;\n"
 "	font-size: 19px;\n"
-"	selection-color: #000000;\n"
+"	color: rgba(0, 0, 0, 100%);\n"
 "	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                 stop: 0 rgb(255, 255, 255), stop: 1.0 rgb(233, 233, 233));\n"
 "}\n"
 "QPushButton::pressed {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
-"	font-family: \"Aero Matics\";\n"
 "	font-size: 19px;\n"
-"	selection-color: #000000;\n"
+"	color: rgba(0, 0, 0, 80%);\n"
 "	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                 stop: 0 rgb(220, 220, 220), stop: 1.0 rgb(240, 240, 240));\n"
 "}\n"
 "QPushButton::checked {\n"
 "    border: 1px solid gray;\n"
 "    padding: 1px 5px 1px 5px;\n"
-"	font-family: \"Aero Matics\";\n"
 "	font-size: 19px;\n"
-"	selection-color: #000000;\n"
+"	color: rgba(0, 0, 0, 80%);\n"
 "	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                 stop: 0 rgb(220, 220, 220), stop: 1.0 rgb(240, 240, 240));\n"
 "}"));
@@ -341,16 +356,17 @@ public:
         toggleCategoryDetails->setChecked(false);
         categoryDetails = new QLabel(centralWidget);
         categoryDetails->setObjectName(QStringLiteral("categoryDetails"));
-        categoryDetails->setGeometry(QRect(15, 130, 600, 30));
+        categoryDetails->setGeometry(QRect(10, 130, 635, 30));
+        categoryDetails->setFont(font2);
         categoryDetails->setStyleSheet(QLatin1String("border: 1px solid darkgrey;\n"
 "background-color: rgb(255, 255, 255);\n"
-"font-family: \"Aero Matics\";\n"
-"font-size: 19px;"));
+"font-family: \"Forgotten Futurist Rg\";\n"
+"font-size: 20px;"));
         categoryDetails->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         converterClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(converterClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 631, 21));
+        menuBar->setGeometry(QRect(0, 0, 661, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuAjutor = new QMenu(menuBar);
@@ -400,6 +416,9 @@ public:
 #ifndef QT_NO_TOOLTIP
         toggleCategoryDetails->setToolTip(QApplication::translate("converterClass", "<html><head/><body><p>Arat\304\203 detalii despre unitatea de m\304\203sur\304\203 selectat\304\203.</p></body></html>", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        toggleCategoryDetails->setWhatsThis(QApplication::translate("converterClass", "<html><head/><body><p><br/></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_WHATSTHIS
         toggleCategoryDetails->setText(QApplication::translate("converterClass", "Detalii", Q_NULLPTR));
         categoryDetails->setText(QString());
         menuFile->setTitle(QApplication::translate("converterClass", "File", Q_NULLPTR));

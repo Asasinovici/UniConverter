@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
+    <width>661</width>
     <height>150</height>
    </rect>
   </property>
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>631</width>
+    <width>661</width>
     <height>150</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>631</width>
+    <width>661</width>
     <height>16777215</height>
    </size>
   </property>
@@ -41,7 +41,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>529</x>
+      <x>559</x>
       <y>10</y>
       <width>86</width>
       <height>30</height>
@@ -49,8 +49,10 @@
     </property>
     <property name="font">
      <font>
-      <family>Aero Matics</family>
+      <family>Forgotten Futurist Rg</family>
       <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="mouseTracking">
@@ -69,8 +71,9 @@
      <string notr="true">QComboBox {
     border: 1px solid gray;
     padding: 0px 5px 0px 5px;
-	font-family: &quot;Aero Matics&quot;;
-	font-size: 25px;
+	font-family: &quot;Forgotten Futurist Rg&quot;;
+	font-size: 21px;
+	font-weight: bold;
 	selection-color: #000000;
 }
 
@@ -130,7 +133,7 @@ QComboBox QAbstractItemView {
     </property>
     <property name="geometry">
      <rect>
-      <x>529</x>
+      <x>559</x>
       <y>90</y>
       <width>86</width>
       <height>30</height>
@@ -138,8 +141,10 @@ QComboBox QAbstractItemView {
     </property>
     <property name="font">
      <font>
-      <family>Aero Matics</family>
+      <family>Forgotten Futurist Rg</family>
       <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="mouseTracking">
@@ -158,8 +163,9 @@ QComboBox QAbstractItemView {
      <string notr="true">QComboBox {
     border: 1px solid gray;
     padding: 0px 5px 0px 5px;
-	font-family: &quot;Aero Matics&quot;;
-	font-size: 25px;
+	font-family: &quot;Forgotten Futurist Rg&quot;;
+	font-size: 21px;
+	font-weight: bold;
 	selection-color: #000000;
 }
 
@@ -210,7 +216,7 @@ QComboBox QAbstractItemView {
    <widget class="QLineEdit" name="inputBeforeConversion">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>260</x>
       <y>10</y>
       <width>300</width>
       <height>30</height>
@@ -225,7 +231,7 @@ QComboBox QAbstractItemView {
     </property>
     <property name="font">
      <font>
-      <family>Aero Matics</family>
+      <family>Forgotten Futurist Rg</family>
       <pointsize>17</pointsize>
       <weight>50</weight>
       <italic>false</italic>
@@ -236,7 +242,7 @@ QComboBox QAbstractItemView {
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 17pt &quot;Aero Matics&quot;;</string>
+     <string notr="true">font: 17pt &quot;Forgotten Futurist Rg&quot;;</string>
     </property>
     <property name="text">
      <string/>
@@ -251,14 +257,14 @@ QComboBox QAbstractItemView {
     </property>
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>260</x>
       <y>90</y>
       <width>300</width>
       <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 17pt &quot;Aero Matics&quot;;
+     <string notr="true">font: 17pt &quot;Forgotten Futurist Rg&quot;;
 background-color: rgb(240, 240, 240);</string>
     </property>
     <property name="readOnly">
@@ -274,15 +280,15 @@ background-color: rgb(240, 240, 240);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>16</x>
+      <x>11</x>
       <y>10</y>
-      <width>200</width>
+      <width>230</width>
       <height>70</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Aero Matics</family>
+      <family>Forgotten Futurist Rg</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -302,8 +308,8 @@ background-color: rgb(240, 240, 240);</string>
      <string notr="true">QComboBox {
     border: 1px solid gray;
     padding: 5px 5px 5px 15px;
-	font-family: &quot;Aero Matics&quot;;
-	font-size: 31px;
+	font-family: &quot;Forgotten Futurist Rg&quot;;
+	font-size: 33px;
 	selection-color: #000000;
 }
 
@@ -351,7 +357,7 @@ QComboBox QAbstractItemView {
    <widget class="QPushButton" name="swapValues">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>260</x>
       <y>50</y>
       <width>43</width>
       <height>30</height>
@@ -378,6 +384,15 @@ QPushButton::pressed {
 	  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
 	background-image: url(:/converter/Resources/swapValues-pressed.png);
+}
+QPushButton::disabled {
+    border: 1px solid gray;
+    padding: 1px 5px 1px 5px;
+	font-size: 17px;
+	selection-color: #000000;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
+	background-image: url(:/converter/Resources/swapValues-pressed.png);
 }</string>
     </property>
     <property name="text">
@@ -387,7 +402,7 @@ QPushButton::pressed {
    <widget class="QPushButton" name="swapUnits">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>580</x>
       <y>50</y>
       <width>40</width>
       <height>30</height>
@@ -423,9 +438,9 @@ QPushButton::pressed {
    <widget class="QPushButton" name="toggleCategoryDetails">
     <property name="geometry">
      <rect>
-      <x>15</x>
+      <x>10</x>
       <y>90</y>
-      <width>200</width>
+      <width>230</width>
       <height>30</height>
      </rect>
     </property>
@@ -438,31 +453,33 @@ QPushButton::pressed {
     <property name="toolTip">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Arată detalii despre unitatea de măsură selectată.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     border: 1px solid gray;
     padding: 1px 5px 1px 5px;
-	font-family: &quot;Aero Matics&quot;;
+	font-family: &quot;Forgotten Futurist Rg&quot;;
+	font-weight: bold;
 	font-size: 19px;
-	selection-color: #000000;
+	color: rgba(0, 0, 0, 100%);
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 rgb(255, 255, 255), stop: 1.0 rgb(233, 233, 233));
 }
 QPushButton::pressed {
     border: 1px solid gray;
     padding: 1px 5px 1px 5px;
-	font-family: &quot;Aero Matics&quot;;
 	font-size: 19px;
-	selection-color: #000000;
+	color: rgba(0, 0, 0, 80%);
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 rgb(220, 220, 220), stop: 1.0 rgb(240, 240, 240));
 }
 QPushButton::checked {
     border: 1px solid gray;
     padding: 1px 5px 1px 5px;
-	font-family: &quot;Aero Matics&quot;;
 	font-size: 19px;
-	selection-color: #000000;
+	color: rgba(0, 0, 0, 80%);
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 rgb(220, 220, 220), stop: 1.0 rgb(240, 240, 240));
 }</string>
@@ -480,17 +497,23 @@ QPushButton::checked {
    <widget class="QLabel" name="categoryDetails">
     <property name="geometry">
      <rect>
-      <x>15</x>
+      <x>10</x>
       <y>130</y>
-      <width>600</width>
+      <width>635</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Forgotten Futurist Rg</family>
+      <pointsize>-1</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border: 1px solid darkgrey;
 background-color: rgb(255, 255, 255);
-font-family: &quot;Aero Matics&quot;;
-font-size: 19px;</string>
+font-family: &quot;Forgotten Futurist Rg&quot;;
+font-size: 20px;</string>
     </property>
     <property name="text">
      <string/>
@@ -505,7 +528,7 @@ font-size: 19px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>631</width>
+     <width>661</width>
      <height>21</height>
     </rect>
    </property>
