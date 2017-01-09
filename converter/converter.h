@@ -5,12 +5,13 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_converter.h"
 #include <QMessagebox>
+#include <qfontdatabase.h>
 #include <boost/multiprecision/cpp_bin_float.hpp>
 
 #define MAX_CATEGORIES 30
 #define MAX_UNITS_PER_CATEGORY 50
-#define INPUT_FILE_NAME "Resources/Conversion Table.txt"
-#define MAIN_WINDOW_ICON_PATH "Resources/windowIcon.png"
+#define INPUT_FILE_NAME ":/ConversionTable/Resources/Conversion Table.txt"
+#define MAIN_WINDOW_ICON_PATH ":/image/Resources/image/windowIcon.png"
 
 struct unitNode {
 	QString unitNameShort;
@@ -41,6 +42,8 @@ public:
 	void initTree(rootNode **root);
 	void initWidgets(rootNode *root);
 	QMessageBox helpWindow;
+	int idMainFont = QFontDatabase::addApplicationFont(":/font/Resources/fonts/forgotten futurist rg.ttf");
+	int iDmainFontBold = QFontDatabase::addApplicationFont(":/font/Resources/fonts/forgotten futurist bd.ttf");
 	~converter();
 
 private slots:

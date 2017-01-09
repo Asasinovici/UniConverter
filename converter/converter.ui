@@ -100,12 +100,12 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-	image: url(:/converter/Resources/down-arrow-small.png);
+	image: url(:/image/Resources/image/down-arrow-small.png);
 }
 
 
 QComboBox::down-arrow:on {
-	image: url(:/converter/Resources/down-arrow-small-inverted.png);
+	image: url(:/image/Resources/image/down-arrow-small-inverted.png);
 }
 
 QComboBox QAbstractItemView {
@@ -192,12 +192,12 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-	image: url(:/converter/Resources/down-arrow-small.png);
+	image: url(:/image/Resources/image/down-arrow-small.png);
 }
 
 
 QComboBox::down-arrow:on {
-	image: url(:/converter/Resources/down-arrow-small-inverted.png);
+	image: url(:/image/Resources/image/down-arrow-small-inverted.png);
 }
 
 QComboBox QAbstractItemView {
@@ -336,12 +336,12 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-	image: url(:/converter/Resources/down-arrow-big.png);
+	image: url(:/image/Resources/image/down-arrow-big.png);
 }
 
 
 QComboBox::down-arrow:on {
-	image: url(:/converter/Resources/down-arrow-big-inverted.png);
+	image: url(:/image/Resources/image/down-arrow-big-inverted.png);
 }
 
 QComboBox QAbstractItemView {
@@ -374,7 +374,7 @@ QComboBox QAbstractItemView {
 	selection-color: #000000;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
-	background-image: url(:/converter/Resources/swapValues.png);
+	background-image: url(:/image/Resources/image/swapValues.png);
 }
 QPushButton::pressed {
     border: 1px solid gray;
@@ -383,7 +383,7 @@ QPushButton::pressed {
 	selection-color: #000000;
 	  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
-	background-image: url(:/converter/Resources/swapValues-pressed.png);
+	background-image: url(:/image/Resources/image/swapValues-pressed.png);
 }
 QPushButton::disabled {
     border: 1px solid gray;
@@ -392,7 +392,7 @@ QPushButton::disabled {
 	selection-color: #000000;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
-	background-image: url(:/converter/Resources/swapValues-pressed.png);
+	background-image: url(:/image/Resources/image/swapValues-pressed.png);
 }</string>
     </property>
     <property name="text">
@@ -419,7 +419,7 @@ QPushButton::disabled {
 	selection-color: #000000;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
-	background-image: url(:/converter/Resources/swapUnits.png);
+	background-image: url(:/image/Resources/image/swapUnits.png);
 }
 QPushButton::pressed {
     border: 1px solid gray;
@@ -428,7 +428,7 @@ QPushButton::pressed {
 	selection-color: #000000;
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
-	background-image: url(:/converter/Resources/swapUnits-pressed.png);
+	background-image: url(:/image/Resources/image/swapUnits-pressed.png);
 }</string>
     </property>
     <property name="text">

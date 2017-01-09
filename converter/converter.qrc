@@ -1,14 +1,20 @@
 <RCC>
-    <qresource prefix="/converter">
+    <qresource prefix="/font">
+        <file>Resources/fonts/forgotten futurist bd.ttf</file>
+        <file>Resources/fonts/forgotten futurist rg.ttf</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>Resources/image/down-arrow-big.png</file>
+        <file>Resources/image/down-arrow-big-inverted.png</file>
+        <file>Resources/image/down-arrow-small.png</file>
+        <file>Resources/image/down-arrow-small-inverted.png</file>
+        <file>Resources/image/swapUnits.png</file>
+        <file>Resources/image/swapUnits-pressed.png</file>
+        <file>Resources/image/swapValues.png</file>
+        <file>Resources/image/swapValues-pressed.png</file>
+        <file>Resources/image/windowIcon.png</file>
+    </qresource>
+    <qresource prefix="/ConversionTable">
         <file>Resources/Conversion Table.txt</file>
-        <file>Resources/swapValues.png</file>
-        <file>Resources/swapValues-pressed.png</file>
-        <file>Resources/swapUnits.png</file>
-        <file>Resources/swapUnits-pressed.png</file>
-        <file>Resources/windowIcon.png</file>
-        <file>Resources/down-arrow-big.png</file>
-        <file>Resources/down-arrow-big-inverted.png</file>
-        <file>Resources/down-arrow-small.png</file>
-        <file>Resources/down-arrow-small-inverted.png</file>
     </qresource>
 </RCC>

@@ -7,7 +7,5 @@ int main(int argc, char *argv[])
 	converter converterMainWindow;
 	converterMainWindow.show();
 
-
-
 	return a.exec();
 }
