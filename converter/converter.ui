@@ -50,8 +50,9 @@
     <property name="font">
      <font>
       <family>Forgotten Futurist Rg</family>
-      <pointsize>-1</pointsize>
+      <pointsize>15</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -71,8 +72,7 @@
      <string notr="true">QComboBox {
     border: 1px solid gray;
     padding: 0px 5px 0px 5px;
-	font-family: &quot;Forgotten Futurist Rg&quot;;
-	font-size: 21px;
+	font: 15pt &quot;Forgotten Futurist Rg&quot;;
 	font-weight: bold;
 	selection-color: #000000;
 }
@@ -142,8 +142,9 @@ QComboBox QAbstractItemView {
     <property name="font">
      <font>
       <family>Forgotten Futurist Rg</family>
-      <pointsize>-1</pointsize>
+      <pointsize>15</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -163,8 +164,7 @@ QComboBox QAbstractItemView {
      <string notr="true">QComboBox {
     border: 1px solid gray;
     padding: 0px 5px 0px 5px;
-	font-family: &quot;Forgotten Futurist Rg&quot;;
-	font-size: 21px;
+	font: 15pt &quot;Forgotten Futurist Rg&quot;;
 	font-weight: bold;
 	selection-color: #000000;
 }
@@ -216,9 +216,9 @@ QComboBox QAbstractItemView {
    <widget class="QLineEdit" name="inputBeforeConversion">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>250</x>
       <y>10</y>
-      <width>300</width>
+      <width>310</width>
       <height>30</height>
      </rect>
     </property>
@@ -257,15 +257,15 @@ QComboBox QAbstractItemView {
     </property>
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>250</x>
       <y>90</y>
-      <width>300</width>
+      <width>310</width>
       <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 17pt &quot;Forgotten Futurist Rg&quot;;
-background-color: rgb(240, 240, 240);</string>
+background-color: rgb(230, 226, 255);</string>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -289,7 +289,10 @@ background-color: rgb(240, 240, 240);</string>
     <property name="font">
      <font>
       <family>Forgotten Futurist Rg</family>
-      <pointsize>-1</pointsize>
+      <pointsize>27</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="mouseTracking">
@@ -308,8 +311,7 @@ background-color: rgb(240, 240, 240);</string>
      <string notr="true">QComboBox {
     border: 1px solid gray;
     padding: 5px 5px 5px 15px;
-	font-family: &quot;Forgotten Futurist Rg&quot;;
-	font-size: 33px;
+	font: 27pt &quot;Forgotten Futurist Rg&quot;;
 	selection-color: #000000;
 }
 
@@ -357,7 +359,7 @@ QComboBox QAbstractItemView {
    <widget class="QPushButton" name="swapValues">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>250</x>
       <y>50</y>
       <width>43</width>
       <height>30</height>
@@ -460,9 +462,8 @@ QPushButton::pressed {
      <string notr="true">QPushButton {
     border: 1px solid gray;
     padding: 1px 5px 1px 5px;
-	font-family: &quot;Forgotten Futurist Rg&quot;;
+	font: 14pt &quot;Forgotten Futurist Rg&quot;;
 	font-weight: bold;
-	font-size: 19px;
 	color: rgba(0, 0, 0, 100%);
 	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 rgb(255, 255, 255), stop: 1.0 rgb(233, 233, 233));
@@ -506,20 +507,236 @@ QPushButton::checked {
     <property name="font">
      <font>
       <family>Forgotten Futurist Rg</family>
-      <pointsize>-1</pointsize>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">border: 1px solid darkgrey;
 background-color: rgb(255, 255, 255);
-font-family: &quot;Forgotten Futurist Rg&quot;;
-font-size: 20px;</string>
+font: 15pt &quot;Forgotten Futurist Rg&quot;;</string>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="swapUnits_2">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>50</y>
+      <width>40</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shimbă unitățile de măsură între ele.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border: 1px solid gray;
+    padding: 1px 5px 1px 5px;
+	font-size: 17px;
+	selection-color: #000000;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
+	background-image: url(:/image/Resources/image/swapUnits.png);
+}
+QPushButton::pressed {
+    border: 1px solid gray;
+    padding: 1px 5px 1px 5px;
+	font-size: 17px;
+	selection-color: #000000;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
+	background-image: url(:/image/Resources/image/swapUnits-pressed.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="unitSelector_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>559</x>
+      <y>90</y>
+      <width>86</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Forgotten Futurist Rg</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>1</number>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+    border: 1px solid gray;
+    padding: 0px 5px 0px 5px;
+	font: 15pt &quot;Forgotten Futurist Rg&quot;;
+	font-weight: bold;
+	selection-color: #000000;
+}
+
+QComboBox:editable {
+    background: white;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
+	border: 1px solid gray;
+}
+
+
+QComboBox::drop-down {
+	border: 0px solid white;
+    background-color: rgba(255, 255, 255, 0%);
+	width: 19px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/image/Resources/image/down-arrow-small.png);
+}
+
+
+QComboBox::down-arrow:on {
+	image: url(:/image/Resources/image/down-arrow-small-inverted.png);
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid gray;
+	border-top-color: white;
+    selection-background-color: rgb(220, 220, 220);
+	selection-color: rgb(0, 0, 0);
+    padding: 0px 3px 3px 3px;
+}
+</string>
+    </property>
+    <property name="maxVisibleItems">
+     <number>15</number>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="unitSelector_4">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>559</x>
+      <y>10</y>
+      <width>86</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Forgotten Futurist Rg</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>1</number>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+    border: 1px solid gray;
+    padding: 0px 5px 0px 5px;
+	font: 15pt &quot;Forgotten Futurist Rg&quot;;
+	font-weight: bold;
+	selection-color: #000000;
+}
+
+QComboBox:editable {
+    background: white;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #FFFFFF, stop: 1.0 #E9E9E9);
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E9E9E9, stop: 1.0 #FFFFFF);
+	border: 1px solid gray;
+}
+
+
+QComboBox::drop-down {
+	border: 0px solid white;
+    background-color: rgba(255, 255, 255, 0%);
+	width: 19px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/image/Resources/image/down-arrow-small.png);
+}
+
+
+QComboBox::down-arrow:on {
+	image: url(:/image/Resources/image/down-arrow-small-inverted.png);
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid gray;
+	border-top-color: white;
+    selection-background-color: rgb(220, 220, 220);
+	selection-color: rgb(0, 0, 0);
+    padding: 0px 3px 3px 3px;
+}
+</string>
+    </property>
+    <property name="maxVisibleItems">
+     <number>15</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
     </property>
    </widget>
   </widget>

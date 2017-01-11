@@ -90,6 +90,8 @@ void converter::initTree(rootNode **root)
 
 void converter::initWidgets(rootNode *root)
 {
+	this->setMaximumHeight(150);
+	this->setMinimumHeight(150);
 	this->resize(606, 150);
 	this->setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
 	ui.unitSelector_1->clear();
@@ -184,11 +186,15 @@ void converter::on_toggleCategoryDetails_toggled()
 		}
 		ui.categoryDetails->setText(categoryDetailsText);
 		ui.categoryDetails->show();
+		this->setMaximumHeight(150 + detailsLabelHeight + 10);
+		this->setMinimumHeight(150 + detailsLabelHeight + 10);
 		this->resize(661, 150 + detailsLabelHeight + 10);
 	}
 	else
 	{
 		ui.categoryDetails->hide();
+		this->setMaximumHeight(150);
+		this->setMinimumHeight(150);
 		this->resize(661, 150);
 	}
 }
