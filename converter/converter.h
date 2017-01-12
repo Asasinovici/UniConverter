@@ -10,8 +10,9 @@
 
 #define MAX_CATEGORIES 30
 #define MAX_UNITS_PER_CATEGORY 50
-#define INPUT_FILE_NAME ":/ConversionTable/Resources/Conversion Table.txt"
+#define INPUT_FILE_NAME "Resources/Conversion Table.txt"
 #define MAIN_WINDOW_ICON_PATH ":/image/Resources/image/windowIcon.png"
+#define MAX_RESULT_PRECISION 18
 
 struct unitNode {
 	QString unitNameShort;
@@ -42,6 +43,7 @@ public:
 	void initTree(rootNode **root);
 	void initWidgets(rootNode *root);
 	QMessageBox helpWindow;
+	QMessageBox errorDialog;
 	int idMainFont = QFontDatabase::addApplicationFont(":/font/Resources/fonts/forgotten futurist rg.ttf");
 	int iDmainFontBold = QFontDatabase::addApplicationFont(":/font/Resources/fonts/forgotten futurist bd.ttf");
 	~converter();
@@ -53,7 +55,6 @@ private slots:
 	void on_categorySelector_activated();
 	void on_inputBeforeConversion_textEdited();
 	void on_actionInformatii_triggered();
-	void on_actionAddUnit_triggered();
 	void on_unitSelector_1_activated();
 	void on_unitSelector_2_activated();
 

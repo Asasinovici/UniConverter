@@ -1,6 +1,8 @@
 # UniConverter
 Convertor intre unitati de masura.<br />
 <br />
+## Pentru prezentare:<br />
+Folosiți folderul Win32/release sau descărcați arhiva [asta](https://drive.google.com/file/d/0B7v0f_o11Q6IVzN4aGd5MFE5VTg/view?usp=sharing).
 ## Using:<br />
 1. [Qt 5.7](https://www.qt.io/download/)<br />
 2. QtPackage form VS2015. VS menu bar > Tools>Extensions and updates > Online > Search for "Qt" and it will pop up.<br />

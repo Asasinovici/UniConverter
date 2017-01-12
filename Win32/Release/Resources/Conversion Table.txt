@@ -1,0 +1,52 @@
+﻿<Lungime>
+nm / nanometru / 1000000000
+μm / micrometru / 1000000
+cm / centimetru / 100
+m / metru / 1
+dm / decimetru / 10
+km / kilometru / 0.001
+dam / decametru / 0.1
+hm / hectometru / 0.01
+ft / foot(picioare) / 3.2808399
+in / inch / 39.3700787
+mi / milă / 0.000621371192
+<Masă>
+Kg / kilogram / 1
+g / gram / 1000
+mg / miligram / 1000000
+lbs / pound / 2.2046244202
+oz / uncie / 35.273990723
+t / tonă / 0.001
+ct / carat / 5000
+<Sunet>
+B / bel / 0.1
+dB / decibel / 1
+Np / neper / 0.1151277918
+<Timp>
+s / secundă / 31557600
+ms / milisecundă / 31557600000
+μs / microsecundă / 31557600000000
+ns / nanosecundă / 31557600000000000
+ps / picosecundă / 31557600000000000000
+m / minut / 525960
+oră / oră / 8766
+zi / zi / 365.25
+săp. / saptamana / 52.178571429
+lu / lună / 12
+an / an / 1
+<Date>
+b / bit / 9007199254740992
+B / Byte / 1125899906842624
+KB / kilobyte / 1099511627776
+MB / megabyte / 1073741824
+GB / gigabyte / 1048576
+TB / terabyte / 1024
+PB / petabyte / 1
+<PET-uri>
+RON / lei grei / 1
+Timi / Timișoreana / 0.1176470588235294
+Ciuc / Ciucaș / 0.1818
+Al / Albacher / 0.16666
+Bcg / Bucegi / 0.25
+Nrc / Noroc / 0.2222222
+Nm / Newmarkt / 0.2

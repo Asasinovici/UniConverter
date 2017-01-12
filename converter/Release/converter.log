@@ -1,1 +1,6 @@
-﻿
+﻿  Moc'ing converter.h...
+  moc_converter.cpp
+  converter.cpp
+  main.cpp
+  Generating Code...
+  converter.vcxproj -> C:\Users\asasi\Desktop\project\Project1\converter\Win32\Release\converter.exe

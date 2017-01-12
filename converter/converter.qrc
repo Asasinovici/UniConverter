@@ -14,7 +14,4 @@
         <file>Resources/image/swapValues-pressed.png</file>
         <file>Resources/image/windowIcon.png</file>
     </qresource>
-    <qresource prefix="/ConversionTable">
-        <file>Resources/Conversion Table.txt</file>
-    </qresource>
 </RCC>

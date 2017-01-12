@@ -1,5 +1,4 @@
 ﻿#include "converter.h"
-#include "adddialog.hpp"
 
 converter::converter(QWidget *parent)
 	: QMainWindow(parent)
@@ -14,13 +13,6 @@ converter::converter(QWidget *parent)
 	initWidgets(root);
 }
 
-void converter::on_actionAddUnit_triggered()
-{
-	addDialog addUnitDialog;
-	addUnitDialog.setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
-	addUnitDialog.exec();
-}
-
 void converter::on_actionInformatii_triggered()
 {
 	helpWindow.exec();
@@ -31,68 +23,82 @@ void converter::initTree(rootNode **root)
 	QFile inputFile(INPUT_FILE_NAME);
 
 	if (!inputFile.exists())
-	{	// TO DO: throw error
-		ui.inputAfterConversion->setText("Error: File not found.");
+	{	
+		errorDialog.setText(u8"Fișierul \"Conversion Table.txt\" nu a putut fi găsit.");
+		int clickedButton = errorDialog.exec();
+		if (clickedButton == QMessageBox::Close)
+			this->close();
 		inputFile.close();
 	}
 	else
-	{	// read file into tree
+	{	
 		if (!inputFile.open(QIODevice::ReadOnly | QIODevice::Text))
-			// TO DO: throw error
-			ui.inputAfterConversion->setText("Error: File not found.");
-		QTextStream inputTextStream(&inputFile);
-		int categoryIter = 0, unitIter = 0;
-		categoryNode *currentCategory = nullptr;
-
-		while (!inputTextStream.atEnd())
 		{
-			QString fileLine = inputTextStream.readLine();
-			if (fileLine.startsWith("<") && fileLine.endsWith(">"))
-			{
-				if (categoryIter > 0)
-					(*root)->categories[categoryIter - 1]->numberOfUnits = unitIter;
-
-				unitIter = 0;
-				fileLine.remove(0, 1);
-				fileLine.remove(fileLine.length() - 1, 1);
-
-				categoryNode *newCategory = new categoryNode;
-
-				newCategory->categoryName = fileLine;
-				(*root)->categories[categoryIter++] = newCategory;
-
-				currentCategory = newCategory;
-			}
-			else
-			{
-				unitNode *newUnit = new unitNode;
-				currentCategory->units[unitIter++] = newUnit;
-				QString separator(" / ");
-
-				QString tempData;
-
-				tempData = fileLine.section(separator, 0, 0);
-				newUnit->unitNameShort = tempData;
-
-				tempData = fileLine.section(separator, 1, 1);
-				newUnit->unitNameLong = tempData;
-
-				tempData = fileLine.section(separator, 2, 2);
-				newUnit->conversionFactor = tempData.toFloat();
-
-			}
-			currentCategory->numberOfUnits = unitIter;
-			(*root)->numberOfCategories = categoryIter;
+			errorDialog.setText(u8"Fișierul \"Conversion Table.txt\" nu a putut fi deschis.");
+			int clickedButton = errorDialog.exec();
+			if (clickedButton == QMessageBox::Close)
+				this->close();
+			inputFile.close();
 		}
-		inputFile.close();
+		else
+		{
+			QTextStream inputTextStream(&inputFile);
+			int categoryIter = 0, unitIter = 0;
+			categoryNode *currentCategory = nullptr;
+
+			while (!inputTextStream.atEnd())
+			{
+				QString fileLine = inputTextStream.readLine();
+				if (fileLine.startsWith("<") && fileLine.endsWith(">"))
+				{
+					if (categoryIter > 0)
+						(*root)->categories[categoryIter - 1]->numberOfUnits = unitIter;
+
+					unitIter = 0;
+					fileLine.remove(0, 1);
+					fileLine.remove(fileLine.length() - 1, 1);
+
+					categoryNode *newCategory = new categoryNode;
+
+					newCategory->categoryName = fileLine;
+					(*root)->categories[categoryIter++] = newCategory;
+
+					currentCategory = newCategory;
+				}
+				else
+				{
+					unitNode *newUnit = new unitNode;
+					currentCategory->units[unitIter++] = newUnit;
+					QString separator(" / ");
+
+					QString tempData;
+
+					tempData = fileLine.section(separator, 0, 0);
+					newUnit->unitNameShort = tempData;
+
+					tempData = fileLine.section(separator, 1, 1);
+					newUnit->unitNameLong = tempData;
+
+					tempData = fileLine.section(separator, 2, 2);
+					newUnit->conversionFactor = tempData.toFloat();
+
+				}
+				currentCategory->numberOfUnits = unitIter;
+				(*root)->numberOfCategories = categoryIter;
+			}
+			inputFile.close();
+		}
 	}
 }
 
 void converter::initWidgets(rootNode *root)
 {
+	errorDialog.setStandardButtons(QMessageBox::Close);
+	errorDialog.setDefaultButton(QMessageBox::Close);
 	this->setMaximumHeight(150);
 	this->setMinimumHeight(150);
 	this->resize(606, 150);
+	ui.swapValues->setDisabled(true);
 	this->setWindowIcon(QIcon(MAIN_WINDOW_ICON_PATH));
 	ui.unitSelector_1->clear();
 	ui.unitSelector_2->clear();
@@ -115,7 +121,7 @@ void converter::initWidgets(rootNode *root)
 }
 
 void converter::on_categorySelector_activated()
-{	// things to do when the user changes category
+{	
 	int categoryIndex = 0, unitIndex = 0;
 	ui.inputBeforeConversion->clear();
 	ui.inputAfterConversion->clear();
@@ -135,32 +141,40 @@ void converter::on_categorySelector_activated()
 }
 
 void converter::on_inputBeforeConversion_textEdited()
-{	//things to do when user inputs values in the first lineedit
-
-	// TO DO: check input so i dont get erros
+{	
 	using namespace boost::multiprecision;
 	std::string inputString = ui.inputBeforeConversion->text().toStdString(), outputString;
 	try
 	{
 		cpp_bin_float_50  input(inputString.c_str());
 
-		if (ui.unitSelector_1->currentIndex() == ui.unitSelector_2->currentIndex())
-			ui.inputAfterConversion->setText(QString::fromStdString(inputString));
+
+		if (input == 0)
+		{
+			ui.inputAfterConversion->setText(u8"Introduceți o valoare validă!");
+			ui.swapValues->setDisabled(true);
+		}
 		else
 		{
-			cpp_bin_float_50 result("0");
-			cpp_bin_float_50  conversionFactorInput(root->categories[ui.categorySelector->currentIndex()]->units[ui.unitSelector_1->currentIndex()]->conversionFactor);
-			cpp_bin_float_50  conversionFactorOutput(root->categories[ui.categorySelector->currentIndex()]->units[ui.unitSelector_2->currentIndex()]->conversionFactor);
-			result = (input / conversionFactorInput) * conversionFactorOutput;
-			outputString = result.str();
-			ui.inputAfterConversion->setText(QString::fromStdString(outputString));//.replace("e", " x10^")
+			if (ui.unitSelector_1->currentIndex() == ui.unitSelector_2->currentIndex())
+				ui.inputAfterConversion->setText(QString::fromStdString(inputString));
+			else
+			{
+				cpp_bin_float_50 result("0");
+				cpp_bin_float_50  conversionFactorInput(root->categories[ui.categorySelector->currentIndex()]->units[ui.unitSelector_1->currentIndex()]->conversionFactor);
+				cpp_bin_float_50  conversionFactorOutput(root->categories[ui.categorySelector->currentIndex()]->units[ui.unitSelector_2->currentIndex()]->conversionFactor);
+				result = (input / conversionFactorInput) * conversionFactorOutput;
+				outputString = result.str(MAX_RESULT_PRECISION);
+				ui.inputAfterConversion->setText(QString::fromStdString(outputString));
+			}
+			ui.swapValues->setDisabled(false);
 		}
-		ui.swapValues->setDisabled(false);
+		ui.inputBeforeConversion->setStyleSheet("color: rgb(0, 0, 0); font: 17pt \"Forgotten Futurist Rg\"; border: 1px solid gray; background-color: rgba(255, 255, 255, 100%); selection-background-color: rgb(200, 200, 200); selection-color: rgb(0, 0, 0); ");
 	}
 	catch (...)
 	{
-		// TODO: change style on invalid input
 		ui.swapValues->setDisabled(true);
+		ui.inputBeforeConversion->setStyleSheet("color: rgb(0, 0, 0); font: 17pt \"Forgotten Futurist Rg\"; border: 1px solid red; background-color: rgba(255, 190, 190, 30%); selection-background-color: rgb(200, 200, 200); selection-color: rgb(0, 0, 0); ");
 		ui.inputAfterConversion->setText(u8"Verificați datele de intrare!");
 	}
 
@@ -200,11 +214,12 @@ void converter::on_toggleCategoryDetails_toggled()
 }
 
 void converter::on_swapValues_pressed()
-{	// things to do when the swapValues button is pressed
+{	
 	QString tempString;
 	tempString = ui.inputBeforeConversion->text();
 	ui.inputBeforeConversion->setText(ui.inputAfterConversion->text());
 	ui.inputAfterConversion->setText(tempString);
+	on_inputBeforeConversion_textEdited();
 }
 
 void converter::on_swapUnits_pressed()
