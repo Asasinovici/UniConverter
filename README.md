@@ -2,7 +2,7 @@
 Convertor intre unitati de masura.<br />
 <br />
 ## Pentru prezentare:<br />
-Folosiți folderul Win32/release sau descărcați arhiva [asta](https://drive.google.com/file/d/0B7v0f_o11Q6IWFI2bm84RjF0X0E/view?usp=sharing).<br />
+Folosiți folderul Win32/release sau descărcați arhiva [asta](https://drive.google.com/file/d/0B7v0f_o11Q6IZ0xUeXNlR25kNVU/view?usp=sharing).<br />
 
 ## Using:<br />
 1. [Qt 5.7](https://www.qt.io/download/)<br />
