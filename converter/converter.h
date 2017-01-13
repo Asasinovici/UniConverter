@@ -17,7 +17,7 @@
 struct unitNode {
 	QString unitNameShort;
 	QString unitNameLong;
-	float conversionFactor;
+	std::string conversionFactor;
 };
 
 struct categoryNode {

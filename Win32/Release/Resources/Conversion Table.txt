@@ -1,39 +1,73 @@
 ﻿<Lungime>
-nm / nanometru / 1000000000
-μm / micrometru / 1000000
-cm / centimetru / 100
+nm / nanometru / 1e9
+μm / micrometru / 1e6
+mm / milimetru / 1e3
+cm / centimetru / 1e2
 m / metru / 1
 dm / decimetru / 10
 km / kilometru / 0.001
 dam / decametru / 0.1
 hm / hectometru / 0.01
-ft / foot(picioare) / 3.2808399
-in / inch / 39.3700787
-mi / milă / 0.000621371192
+ft / foot(picioare) / 3.280839895
+in / inch / 39.37007874
+mi / milă / 0.0006213689
+yd / yard / 1.0936132983
+al / an lumină / 1.057008707E-16
+<Suprafață>
+m² / metru pătrat / 1e6
+km² / kilometru pătrat / 1
+cm² / centimetru pătrat / 1e10
+mm² / milimetru pătrat / 1e12
+μm² / micrometru pătrat / 1e18
+ha / hectar / 1e2
+mi² / milă pătrată / 0.3861018768
+yd² / yard pătrat / 1195990.0463
+ft² / picior pătrat (square foot) / 10763910.417
+in² / inch pătrat / 1550003100
+ac / acru / 247.10538147
+<Volum>
+m³ / metru cub / 1
+km³ / kilometru cub / 1e-9
+cm³ / cm cub / 1e6
+mm³ / milimetru cub / 1e9
+l / litru / 1e3
+ml / mililitru / 1e6
+gal / galon / 264.17217686
+mi³ / milă cubică / 2.399128636E-10
+yd³ / yard cubic / 1.3079506193
+ft³ / picior cubic (cubic foot) / 35.314666721
+in³ / cubic inch / 61023.744095
+oz / uncie / 35195.079728
+tbs / lingură (table spoon) / 56312.127565
+ts / linguriță (tea spoon) / 168936.38269
 <Masă>
 Kg / kilogram / 1
-g / gram / 1000
-mg / miligram / 1000000
+g / gram / 1e3
+mg / miligram / 1e6
 lbs / pound / 2.2046244202
 oz / uncie / 35.273990723
 t / tonă / 0.001
-ct / carat / 5000
+ct / carat / 5e3
+at / unitate atomică de masă / 6.022136652E+26
 <Sunet>
 B / bel / 0.1
 dB / decibel / 1
 Np / neper / 0.1151277918
 <Timp>
-s / secundă / 31557600
-ms / milisecundă / 31557600000
-μs / microsecundă / 31557600000000
-ns / nanosecundă / 31557600000000000
-ps / picosecundă / 31557600000000000000
+s / secundă / 315576e2
+ms / milisecundă / 315576e5
+μs / microsecundă / 315576e8
+ns / nanosecundă / 315576e11
+ps / picosecundă / 315576e14
 m / minut / 525960
 oră / oră / 8766
 zi / zi / 365.25
 săp. / saptamana / 52.178571429
 lu / lună / 12
 an / an / 1
+dc / deceniu / 0.1
+sec / secol / 0.01
+mil / mileniu / 0.001
 <Date>
 b / bit / 9007199254740992
 B / Byte / 1125899906842624
@@ -45,8 +79,8 @@ PB / petabyte / 1
 <PET-uri>
 RON / lei grei / 1
 Timi / Timișoreana / 0.1176470588235294
-Ciuc / Ciucaș / 0.1818
-Al / Albacher / 0.16666
+Ciuc / Ciucaș / 0.181818181818
+Al / Albacher / 0.166666666666
 Bcg / Bucegi / 0.25
-Nrc / Noroc / 0.2222222
+Nrc / Noroc / 0.22222222222
 Nm / Newmarkt / 0.2

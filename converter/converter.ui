@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
+    <width>655</width>
     <height>150</height>
    </rect>
   </property>
@@ -18,13 +18,13 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>661</width>
+    <width>655</width>
     <height>150</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>661</width>
+    <width>658</width>
     <height>16777215</height>
    </size>
   </property>
@@ -121,7 +121,7 @@ QComboBox QAbstractItemView {
 </string>
     </property>
     <property name="maxVisibleItems">
-     <number>15</number>
+     <number>11</number>
     </property>
     <property name="iconSize">
      <size>
@@ -213,7 +213,7 @@ QComboBox QAbstractItemView {
 </string>
     </property>
     <property name="maxVisibleItems">
-     <number>15</number>
+     <number>11</number>
     </property>
    </widget>
    <widget class="QLineEdit" name="inputBeforeConversion">
@@ -586,6 +586,9 @@ QComboBox QAbstractItemView {
 }
 </string>
     </property>
+    <property name="maxVisibleItems">
+     <number>7</number>
+    </property>
    </widget>
    <widget class="QPushButton" name="swapValues">
     <property name="geometry">
@@ -726,7 +729,7 @@ QPushButton::checked {
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="categoryDetails">
+   <widget class="QTextEdit" name="categoryDetails">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -735,6 +738,12 @@ QPushButton::checked {
       <height>30</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="font">
      <font>
       <family>Forgotten Futurist Rg</family>
@@ -742,18 +751,45 @@ QPushButton::checked {
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
      </font>
     </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">border: 1px solid darkgrey;
-background-color: rgb(255, 255, 255);
-font: 15pt &quot;Forgotten Futurist Rg&quot;;</string>
+     <string notr="true">QScrollBar {
+	background-color: rgb(240, 240, 240);
+    width: 20px;
+}
+QScrollBar::handle {
+	background-color: rgb(200, 200, 200);
+    width: 20px;
+}
+QTextEdit{
+	border: 1px solid darkgrey;
+	background-color: rgb(255, 255, 255);
+	font: 15pt &quot;Forgotten Futurist Rg&quot;;
+	selection-background-color: rgb(200, 200, 200);
+}</string>
     </property>
-    <property name="text">
-     <string/>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::TextSelectableByMouse</set>
     </property>
    </widget>
   </widget>
@@ -762,13 +798,13 @@ font: 15pt &quot;Forgotten Futurist Rg&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>661</width>
+     <width>655</width>
      <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Fișier</string>
     </property>
     <addaction name="actionExit"/>
    </widget>
@@ -790,10 +826,16 @@ font: 15pt &quot;Forgotten Futurist Rg&quot;;</string>
    <property name="text">
     <string>Închide</string>
    </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
   </action>
   <action name="actionInformatii">
    <property name="text">
     <string>Despre UniConverter</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
    </property>
   </action>
   <action name="actionAddUnit">

@@ -80,7 +80,7 @@ void converter::initTree(rootNode **root)
 					newUnit->unitNameLong = tempData;
 
 					tempData = fileLine.section(separator, 2, 2);
-					newUnit->conversionFactor = tempData.toFloat();
+					newUnit->conversionFactor = tempData.toStdString();
 
 				}
 				currentCategory->numberOfUnits = unitIter;
@@ -93,6 +93,7 @@ void converter::initTree(rootNode **root)
 
 void converter::initWidgets(rootNode *root)
 {
+	ui.categoryDetails->setMaximumHeight(ui.categoryDetails->fontMetrics().height()*10+10);
 	errorDialog.setStandardButtons(QMessageBox::Close);
 	errorDialog.setDefaultButton(QMessageBox::Close);
 	this->setMaximumHeight(150);
@@ -189,7 +190,6 @@ void converter::on_toggleCategoryDetails_toggled()
 		detailsLabelHeight = root->categories[ui.categorySelector->currentIndex()]->numberOfUnits;
 		detailsLabelHeight *= ui.categoryDetails->fontMetrics().height();
 		detailsLabelHeight += 10;
-		ui.categoryDetails->resize(635, detailsLabelHeight);
 		for (i = 0; i < root->categories[ui.categorySelector->currentIndex()]->numberOfUnits; i++)
 		{
 			categoryDetailsText.append("<b>");
@@ -200,16 +200,27 @@ void converter::on_toggleCategoryDetails_toggled()
 		}
 		ui.categoryDetails->setText(categoryDetailsText);
 		ui.categoryDetails->show();
-		this->setMaximumHeight(150 + detailsLabelHeight + 10);
-		this->setMinimumHeight(150 + detailsLabelHeight + 10);
-		this->resize(661, 150 + detailsLabelHeight + 10);
+		if (root->categories[ui.categorySelector->currentIndex()]->numberOfUnits < 10)
+		{
+			ui.categoryDetails->resize(635, detailsLabelHeight);
+			this->setMaximumHeight(150 + detailsLabelHeight + 10);
+			this->setMinimumHeight(150 + detailsLabelHeight + 10);
+			this->resize(655, 150 + detailsLabelHeight + 10);
+		}
+		else
+		{
+			ui.categoryDetails->resize(635, ui.categoryDetails->maximumHeight());
+			this->setMaximumHeight(150 + ui.categoryDetails->maximumHeight() + 10);
+			this->setMinimumHeight(150 + ui.categoryDetails->maximumHeight() + 10);
+			this->resize(655, 150 + ui.categoryDetails->maximumHeight() + 10);
+		}
 	}
 	else
 	{
 		ui.categoryDetails->hide();
 		this->setMaximumHeight(150);
 		this->setMinimumHeight(150);
-		this->resize(661, 150);
+		this->resize(655, 150);
 	}
 }
 

@@ -15,12 +15,12 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -41,7 +41,7 @@ public:
     QPushButton *swapValues;
     QPushButton *swapUnits;
     QPushButton *toggleCategoryDetails;
-    QLabel *categoryDetails;
+    QTextEdit *categoryDetails;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuAjutor;
@@ -50,21 +50,23 @@ public:
     {
         if (converterClass->objectName().isEmpty())
             converterClass->setObjectName(QStringLiteral("converterClass"));
-        converterClass->resize(661, 150);
+        converterClass->resize(655, 150);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(converterClass->sizePolicy().hasHeightForWidth());
         converterClass->setSizePolicy(sizePolicy);
-        converterClass->setMinimumSize(QSize(661, 150));
-        converterClass->setMaximumSize(QSize(661, 16777215));
+        converterClass->setMinimumSize(QSize(655, 150));
+        converterClass->setMaximumSize(QSize(658, 16777215));
         converterClass->setStyleSheet(QStringLiteral(""));
         actionSoidfhgbuiaebgae = new QAction(converterClass);
         actionSoidfhgbuiaebgae->setObjectName(QStringLiteral("actionSoidfhgbuiaebgae"));
         actionExit = new QAction(converterClass);
         actionExit->setObjectName(QStringLiteral("actionExit"));
+        actionExit->setIconVisibleInMenu(false);
         actionInformatii = new QAction(converterClass);
         actionInformatii->setObjectName(QStringLiteral("actionInformatii"));
+        actionInformatii->setIconVisibleInMenu(false);
         actionAddUnit = new QAction(converterClass);
         actionAddUnit->setObjectName(QStringLiteral("actionAddUnit"));
         centralWidget = new QWidget(converterClass);
@@ -132,7 +134,7 @@ public:
 "    padding: 0px 3px 3px 3px;\n"
 "}\n"
 ""));
-        unitSelector_1->setMaxVisibleItems(15);
+        unitSelector_1->setMaxVisibleItems(11);
         unitSelector_1->setIconSize(QSize(16, 16));
         unitSelector_2 = new QComboBox(centralWidget);
         unitSelector_2->setObjectName(QStringLiteral("unitSelector_2"));
@@ -190,7 +192,7 @@ public:
 "    padding: 0px 3px 3px 3px;\n"
 "}\n"
 ""));
-        unitSelector_2->setMaxVisibleItems(15);
+        unitSelector_2->setMaxVisibleItems(11);
         inputBeforeConversion = new QLineEdit(centralWidget);
         inputBeforeConversion->setObjectName(QStringLiteral("inputBeforeConversion"));
         inputBeforeConversion->setGeometry(QRect(250, 10, 310, 30));
@@ -313,6 +315,7 @@ public:
 "	selection-color: rgb(0, 0, 0);\n"
 "}\n"
 ""));
+        categorySelector->setMaxVisibleItems(7);
         swapValues = new QPushButton(centralWidget);
         swapValues->setObjectName(QStringLiteral("swapValues"));
         swapValues->setGeometry(QRect(250, 50, 43, 30));
@@ -396,24 +399,47 @@ public:
 "}"));
         toggleCategoryDetails->setCheckable(true);
         toggleCategoryDetails->setChecked(false);
-        categoryDetails = new QLabel(centralWidget);
+        categoryDetails = new QTextEdit(centralWidget);
         categoryDetails->setObjectName(QStringLiteral("categoryDetails"));
         categoryDetails->setGeometry(QRect(10, 130, 635, 30));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(categoryDetails->sizePolicy().hasHeightForWidth());
+        categoryDetails->setSizePolicy(sizePolicy1);
         QFont font3;
         font3.setFamily(QStringLiteral("Forgotten Futurist Rg"));
         font3.setPointSize(15);
         font3.setBold(false);
         font3.setItalic(false);
         font3.setWeight(50);
+        font3.setStyleStrategy(QFont::PreferDefault);
         categoryDetails->setFont(font3);
-        categoryDetails->setStyleSheet(QLatin1String("border: 1px solid darkgrey;\n"
-"background-color: rgb(255, 255, 255);\n"
-"font: 15pt \"Forgotten Futurist Rg\";"));
-        categoryDetails->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        categoryDetails->setMouseTracking(false);
+        categoryDetails->setFocusPolicy(Qt::TabFocus);
+        categoryDetails->setStyleSheet(QLatin1String("QScrollBar {\n"
+"	background-color: rgb(240, 240, 240);\n"
+"    width: 20px;\n"
+"}\n"
+"QScrollBar::handle {\n"
+"	background-color: rgb(200, 200, 200);\n"
+"    width: 20px;\n"
+"}\n"
+"QTextEdit{\n"
+"	border: 1px solid darkgrey;\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	font: 15pt \"Forgotten Futurist Rg\";\n"
+"	selection-background-color: rgb(200, 200, 200);\n"
+"}"));
+        categoryDetails->setFrameShape(QFrame::NoFrame);
+        categoryDetails->setFrameShadow(QFrame::Plain);
+        categoryDetails->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        categoryDetails->setReadOnly(true);
+        categoryDetails->setTextInteractionFlags(Qt::TextSelectableByMouse);
         converterClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(converterClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 661, 21));
+        menuBar->setGeometry(QRect(0, 0, 655, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuAjutor = new QMenu(menuBar);
@@ -466,8 +492,7 @@ public:
         toggleCategoryDetails->setWhatsThis(QApplication::translate("converterClass", "<html><head/><body><p><br/></p></body></html>", Q_NULLPTR));
 #endif // QT_NO_WHATSTHIS
         toggleCategoryDetails->setText(QApplication::translate("converterClass", "Detalii", Q_NULLPTR));
-        categoryDetails->setText(QString());
-        menuFile->setTitle(QApplication::translate("converterClass", "File", Q_NULLPTR));
+        menuFile->setTitle(QApplication::translate("converterClass", "Fi\310\231ier", Q_NULLPTR));
         menuAjutor->setTitle(QApplication::translate("converterClass", "Ajutor", Q_NULLPTR));
     } // retranslateUi
 
